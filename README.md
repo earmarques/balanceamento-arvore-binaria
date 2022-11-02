@@ -14,4 +14,35 @@ No material, o professor se utilizava sempre de uma mesma árvore binária, inse
 
 O grande diferencial didático é que, desde a árvore binária, todo o processo de balanceamento é desenhado passo a passo no terminal, o aluno pode acompanhar graficamente as alterações nos galhos da árvore. E depois de bem compreendido o comportamento do algoritmo de balanceamento escolhido, o estudante fica tentado a correr as linhas do código, reconhecendo as etapas do processo, aprendendo tanto os conceitos quanto a programação destes.
 
+---
+## Abertura
+
+Na primeira tela da execução do programa mostramos a árvore binária que servirá de base para testes de todos os métodos de balanceamento. Em _Propriedades da Árvore_ imprimimos as três formas de percorrer a árvore, a quantidade de elementos, a altura ou profundidade da árvore, e por último damos o diagnóstico de que a nossa árvore de referência está balanceada.
+A seguir é oferecido um menu numérico para o usuário escolher o método de ordenação:
+<br>```1 - Estático```
+<br>```2 - Dinâmico-Estático```
+<br>```3 - Dinâmico-Rotacional```
+<br>```4 - Dinâmico Russo-AVL```
+<br>```9 - Sair do programa```
+
+
+<img width=60% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_abertura.png"><br>
+<sup>_Figura 2: Árvore binária - Escolha do método de balanceamento_</sup>
+
+Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figura 3:
+<br>```0 - Informações sobre o método``` -> breve explicação do algoritmo
+<br>```1 - Inserir valor``` -> adiciona um nó folha à árvore
+<br>```2 - Desenha galhos``` -> percorre toda a árvore desenhando cada nó com seus nós vizinhos à direita e a esquerda
+<br>```3 - Checar balancenamento da árvore``` -> avalia o balancenamento de cada nó, informando o nó desbalanceado se for o caso
+<br>```4 - ``` Balancear árvore binária ``` -> executa o balanceamento e vai imprimindo todas as etapas do processo
+<br>```7 - ``` Reiniciar árvore binária original ``` -> descarta a árvore que estiver sendo usada e recria a árvore base de testes
+<br>```8 - ``` Voltar à escolha do método de balanceamento ``` -> retorna o primeiro menu
+<br>```9 - Sair do programa```
+
+<img width=60% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_menu2.png"><br>
+<sup>_Figura 3: Escolha da ação a ser executada_</sup>
+
+
+---
+## 
 
