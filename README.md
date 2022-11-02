@@ -30,13 +30,13 @@ A seguir é oferecido um menu numérico para o usuário escolher o método de or
 <sup>_Figura 2: Árvore binária - Escolha do método de balanceamento_</sup>
 
 Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figura 3:
-<br>```0 - Informações sobre o método``` -> breve explicação do algoritmo
-<br>```1 - Inserir valor``` -> adiciona um nó folha à árvore
-<br>```2 - Desenha galhos``` -> percorre toda a árvore desenhando cada nó com seus nós vizinhos à direita e a esquerda
-<br>```3 - Checar balancenamento da árvore``` -> avalia o balancenamento de cada nó, informando o nó desbalanceado se for o caso
-<br>```4 - ``` Balancear árvore binária ``` -> executa o balanceamento e vai imprimindo todas as etapas do processo
-<br>```7 - ``` Reiniciar árvore binária original ``` -> descarta a árvore que estiver sendo usada e recria a árvore base de testes
-<br>```8 - ``` Voltar à escolha do método de balanceamento ``` -> retorna o primeiro menu
+<br>```0 - Informações sobre o método``` |=> breve explicação do algoritmo
+<br>```1 - Inserir valor``` |=> adiciona um nó folha à árvore
+<br>```2 - Desenha galhos``` |=> percorre toda a árvore desenhando cada nó com seus nós vizinhos, à direita e à esquerda
+<br>```3 - Checar balancenamento da árvore``` |=> avalia o balancenamento de cada nó, informando o nó desbalanceado se for o caso
+<br>```4 - Balancear árvore binária ``` |=> executa o balanceamento e vai imprimindo todas as etapas do processo
+<br>```7 - Reiniciar árvore binária original ``` |=> descarta a árvore que estiver sendo usada e recria a árvore base de testes
+<br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna o primeiro menu
 <br>```9 - Sair do programa```
 
 <img width=60% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_menu2.png"><br>
