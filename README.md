@@ -80,7 +80,7 @@ Na figura 7 temos a análise dos nós 12 e 33. Vemos que o nó 12 está equilibr
 
 ---
 
-Fazer o balanceamento pelo método estático é muito dispendioso computacionalmente. Devemos recriar a árvore inteira, removendo todos os elementos, ou criando uma totalmente nova, e fazendo a inserção de todos os elementos na "ordem certa". Se fossemos empregar este método em produção, teriamos duas opções de políticas a adotar: ou recriar a árvore toda a cada inserção a fim de que ela esteja sempre balanceada, ou tolerar temporariamente uma árvore desbalanceada e aplicar o balancemanento em um determinado intervalo de tempo, a cada 24h em um horário conveniente, por exemplo. Árvores desbalanceadas deixam a procura da imformação mais lenta. Em suma, ou temos a inserção demorada e as buscas rápidas ou daremos prioridades para inserções e deixaremos as consultas mais lentas; há que se ponderar pela demanda.
+Fazer o balanceamento pelo método estático é muito dispendioso computacionalmente. Devemos recriar a árvore inteira, removendo todos os elementos, ou criando uma totalmente nova, e depois fazer a inserção de todos os elementos na "ordem certa". Se fossemos empregar este método em produção, teriamos duas opções de políticas a adotar: ou recriar a árvore inteira a cada inserção a fim de que ela esteja sempre balanceada, ou tolerar temporariamente uma árvore desbalanceada e aplicar o balancemanento a um determinado intervalo de tempo, a cada 24h em um horário conveniente, por exemplo. Árvores desbalanceadas deixam a procura da informação mais lenta. Em suma, ou temos a inserção demorada e as buscas rápidas ou daremos prioridade às inserções e deixaremos as consultas mais lentas; há que se ponderar pela demanda.
 
 Já mencionamos que a ordem com que se insere os valores afeta a estrutura da árvore. Portanto, precisamos ordenar as inserções de forma que a árvore obtida seja balanceada. Recomendamos consultar o código para saber como estabelecemos esta ordenação otimizada com medianas. 
 
@@ -88,7 +88,7 @@ Escolhendo a opção 4, teremos no terminal todas as etapas do balanceamento:
 
 1. A análise gráfica do balanceamento
 1. O diagnóstico do estado do balanceamento e em qual nó há um desequilíbrio, se houver 
-    Havendo a necessidade do balanceamento,
+      Havendo a necessidade do balanceamento,
 1. É gerada a lista ordenada de inserções otimizada
 1. Insere os elementos recriando a árvore
 1. Refaz a avaliação do balanceamento para validação 
