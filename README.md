@@ -87,8 +87,8 @@ Já mencionamos que a ordem com que se insere os valores afeta a estrutura da á
 Escolhendo a opção 4, teremos no terminal todas as etapas do balanceamento: 
 
 1. A análise gráfica do balanceamento
-1. O diagnóstico do estado do balanceamento e em qual nó há um desequilíbrio, se houver 
-      Havendo a necessidade do balanceamento,
+1. O diagnóstico do estado do balanceamento e em qual nó há um desequilíbrio, se houver
+    Havendo a necessidade do balanceamento,
 1. É gerada a lista ordenada de inserções otimizada
 1. Insere os elementos recriando a árvore
 1. Refaz a avaliação do balanceamento para validação 
