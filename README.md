@@ -18,7 +18,7 @@ O grande diferencial didático é que, desde a árvore binária, todo o processo
 ## Abertura
 
 Na primeira tela da execução do programa mostramos a árvore binária que servirá de base para testes de todos os métodos de balanceamento. Em _Propriedades da Árvore_ imprimimos as três formas de percorrer a árvore, a quantidade de elementos, a altura ou profundidade da árvore, e por último damos o diagnóstico de que a nossa árvore de referência está balanceada.
-A seguir é oferecido um menu numérico para o usuário escolher o método de ordenação:
+A seguir é oferecido um menu numérico para o usuário escolher o método de balanceamento:
 <br>```1 - Estático```
 <br>```2 - Dinâmico-Estático```
 <br>```3 - Dinâmico-Rotacional```
@@ -48,18 +48,18 @@ Vamos tratar agora de cada um dos métodos de balacenamento, começando pelo est
 
 ## Balanceamento Estático
 
-Único método que permite a inserção de vários valores antes de se fazer o balanceamento. Todos os demais já realizam o balenceamento no momento da inserção. O que método estático faz basicamente é remover todos os elementos da árvore para depois os reinserir em uma ordem ótima, na qual a árvore ficará balanceada. 
+Único método que permite a inserção de vários valores antes de se fazer o balanceamento. Todos os demais métodos já realizam o balanceamento no momento da inserção. O que o método estático faz basicamente é remover todos os elementos da árvore para depois os reinserir em uma ordem ótima, na qual a árvore ficará balanceada. 
 
-Para inserir um novo nó ou nó-folha, porque inicialmente este nó-valor ficará em alguma extremindade, fazemos a comparação do valor do nó-folha com o nó corrente, se o nó-folha for maior então descemos pelo lado direito, se for menor descemos o galho pelo lado esquerdo. Numa árvore binária, cada nó pode ter apenas dois nós ligados, um de cada lado. Ao inserimos um novo valor a árvore será percorrida até encontrarmos uma posição vaga, a direita ou a esquerda, de um nó existente na árvore. Vamos exemplificar que ficará mais claro.
+Para inserirmos um nó-folha, porque inicialmente este nó-valor ficará em alguma extremindade, fazemos a comparação do valor do nó-folha com o nó corrente. Se o nó-folha for maior, então descemos pelo lado direito, se for menor, descemos o galho pelo lado esquerdo. Numa árvore binária, cada nó pode ter apenas dois nós ligados, um de cada lado. Ao inserimos um novo valor, a árvore será percorrida recursivamente, fazendo a comparação até encontrarmos uma posição vaga, a direita ou a esquerda, de um nó existente na árvore. Vamos exemplificar que ficará mais claro.
 
-Para desbalancear a árvore original vamos inserir três valores, 35, 37 e 5, nessa ordem, antes de fazermos o balancemanto. Começamos pelo nó-raiz 44 e fazemos a comparação. 35 é maior ou menor que 44? É menor, então descemos pela esquerda até o nó 26. Novamente a comparação: 35 é maior ou menor que 26? É maior, então descemos pela direita até o nó 33. 35 é maior ou menor que 33? É maior, então descemos pela direita e como não há nenhum nó a direita do 33 o 35 encontrou o seu lugar. Ao inserirmos o 37 faremos o mesmo percurso do 35, mas dessa vez a vaga à direta do 33 agora está ocupada pelo 35, então o 37 desce pelo 35 e por ser maior que ele se posicionará a direita do 35. O valor 5 seguirá sempre pelo lado esquerdo, porque 5 é menor que 44, menor que 26, menor que 18 e menor que 12 ficando então pendurado no 12 pelo lado esquerdo. Rabiscando um esboço fica muito mais fácil.
+Para desbalancear a árvore original vamos inserir três valores, 35, 37 e 5, nessa ordem, antes de fazermos o balancemanto. Começamos pelo nó raiz 44 e fazemos a comparação. 35 é maior ou menor que 44? É menor, então descemos pela esquerda até o nó 26. Novamente a comparação: 35 é maior ou menor que 26? É maior, então descemos pela direita até o nó 33. 35 é maior ou menor que 33? É maior, então descemos pela direita e como não há nenhum nó a direita do 33 o 35 encontrou o seu lugar. Ao inserirmos o 37 faremos o mesmo percurso do 35, mas dessa vez a vaga à direta do 33 agora está ocupada pelo 35, então o 37 desce pelo 35 e por ser maior que ele se posicionará a direita do 35. O valor 5 seguirá sempre pelo lado esquerdo, porque 5 é menor que 44, é menor que 26, é menor que 18 e menor que 12, ficando então pendurado no 12 pelo lado esquerdo. Rabiscando um esboço fica muito mais fácil.
 
-É aqui que a opção 2, ```Desenhar galhos``` nos ajuda a entender o atual estado da árvore após as três inserções (figura 4).
+É aqui que a opção 2, ```Desenhar galhos```, nos ajuda a entender o atual estado da árvore após as três inserções (figura 4).
 
 <img alt="Galhos após e inserções: 35, 37 e 5" title="Galhos após e inserções: 35, 37 e 5" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/galhos_apos_3insercoes.png"><br>
 <sup>_Figura 4: Galhos após e inserções: 35, 37 e 5_</sup>
 
-Na figura 4 temos uma parte da saída da opção 2. Nela podemos ver todos os nós inseridos, o 5 do lado esquerdo do 12, o 35 à direita do 33 e o 37 à direita do 35. A ordem das inserções faz total diferença. Se tivessemos inserido o 37 antes do 35, teríamos o galho do nó 33 bem diferente, com o 37  à direita do 33 no lugar do 35, e o 35 à esquerda do 37, como visto na figura 5.
+Na figura 4 temos uma parte da saída da opção 2. Nela podemos ver todos os nós inseridos, o 5 do lado esquerdo do 12, o 35 à direita do 33 e o 37 à direita do 35. A ordem das inserções faz total diferença. Se tivéssemos inserido o 37 antes do 35, teríamos o galho do nó 33 bem diferente, com o 37  à direita do 33 no lugar do 35, e o 35 à esquerda do 37, como visto na figura 5.
 
 <img alt="Galho 33 com 37 inserido antes do 35" title="Galho 33 com 37 inserido antes do 35" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/galho33.png"><br>
 <sup>_Figura 5: Galho 33 com 37 inserido antes do 35_</sup>
