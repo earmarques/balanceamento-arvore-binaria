@@ -98,6 +98,36 @@ A figura 8 traz as etapas de 2 a 5 do balanceamento estático.
 <img alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_balanceamento.png"><br>
 <sup>_Figura 8: Efetuando o balanceamento estático_</sup>
 
+Podemos checar a estrutura final da árvore binária agora balanceada mandando desenhar os galhos com a opção 2 do _menu_.
+
+
+## Balanceamento Dinâmico-Estático
+
+ Após a inserção do elemento, avalia-se o balanceamento da árvore. 
+Executa-se uma busca, a partir do noh-raiz, se há algum noh cujo módulo 
+do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). 
+Se nenhum noh desbalanceado for encontrado, a árvore está balanceada. 
+
+ Caso seja encontrado, a árvore está desbalanceada e a busca deve continuar, 
+descendo pelo galho desequilíbrado, indicado pelo sinal do fator de balanceamento. 
+Há ocasiões em que esse primeiro noh encontrado ficou desbalanceado por 
+efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar 
+buscando até se encontrar o noh desequilibrado de maior profundidade. 
+Encontrado, procede-se o balanceamento. 
+
+ O balanceamento é realizado criando-se um galho clone auxiliar, correspondente 
+a sub-árvore(ramo) desbalanceada, no qual o noh desequilibrado será o noh-raiz. 
+Aplica-se o balanceamento estático ao galho desbalanceado (galho clone). 
+Em seguida, remove-se o galho desbalanceado e reinsere os elementos do 
+galho amputado, conectando o novo galho balanceado. 
+Qualquer noh superior que estivesse desequilibrado, caso houvesse, 
+tornar-se-iria equilibrado, por corolário do reequilíbrio do ramo mais profundo. 
+
+ A principal diferença desta abordagem em relação ao balanceamento estático 
+é que, no puramente estático, remove-se todos os elementos, isto é, 
+o balanceamento é aplicado a árvore toda, enquanto na inserção 
+dinâmica-estática remove-se apenas o ramo problemático, ou seja, 
+aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore.
 
 
 
