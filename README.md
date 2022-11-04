@@ -122,7 +122,7 @@ O balanceamento é realizado criando-se um galho clone auxiliar, correspondente 
 <img alt="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" title="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" src="images/galho87.png"><br>
 <sup>_Figura 11: Balanceamento estático sendo aplicado apenas ao galho desequilibrado_</sup>
 
-Uma vez que o galho esteja balanceado, precisamos determinar qual era o nó pai ao qual este galho estava ligado e por qual dos lados.
+Uma vez que o galho esteja balanceado, precisamos determinar o nó pai ao qual este galho estava ligado e por qual dos lados.
 
 <img alt="Busca pelo nó pai do galho desequilibrado" title="Busca pelo nó pai do galho desequilibrado" src="images/dim-est_galho-pai.png"><br>
 <sup>_Figura 12: Busca pelo nó pai do galho desequilibrado_</sup>
