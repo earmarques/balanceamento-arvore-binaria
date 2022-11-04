@@ -132,7 +132,7 @@ Remove-se o galho desbalanceado e reinsere os elementos do galho amputado, conec
 <img alt="Transplante de galho" title="Transplante de galho" src="images/serrote.png"><br>
 <sup>_Figura 13: Transplante de galho_</sup>
 
-Após o transplante de galho, realiza-se uma nova checagem no balanceamento. O resultado pode ser visto na figura 14.b. Interessante comparar com as propŕiedades da árvore antes do balanceamento, presente na figura 14.a com o resultado final, na figura 14.b. Observamos que o 95 que desequilibrou a árvore está presente nos percursos tanto da árvore desbalanceada quanto na balanceada, mas notamos que a posição no percurso não coincide, evidenciando a reestruturação ocorrida. Também vemos que a altura ou profundidade mudou, reduzindo a altura de 6 para 5. 
+Após o transplante de galho, realiza-se uma nova checagem no balanceamento. O resultado pode ser visto na figura 14.b. Interessante comparar com as propŕiedades da árvore antes do balanceamento, presente na figura 14.a com o resultado final, na figura 14.b. Observamos que o 95 que desequilibrou a árvore está presente nos percursos, tanto da árvore desbalanceada quanto na balanceada, mas notamos que a posição do 95 no percursos antes e depois não coincide, evidenciando a reestruturação ocorrida. Também vemos que a altura ou profundidade mudou, reduzindo a altura de 6 para 5. 
 
 <img width=80% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
 <sup>_Figura 14.a: Propriedades da árvore antes do balanceamento_</sup>
