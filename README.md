@@ -5,7 +5,7 @@
 
 Fatec-RioPreto/SP, 3° semestre do curso Análise e Desnvolvimento de Sistemas, estudando Listas Encadeadas e Árvores Binárias na disciplina Estrutura de Dados, do lendário Professor Dr. Carlos Magnus Carlson Filho.
 
-Para a parte prática, o professor Carlos forneceu um código minimamente estruturado de _Listas Simplesmente Encadeadas_ em ```Python```, porém, estas classes estavam propositalmente incompletas. Após a explicação, o professor passava a complementação destas classes como atividade para nota. O estudante era desafiado a terminar as classes, implementando os métodos faltantes de funcionalidades como: inserir e remover elementos, no início e no final da lista, percorrer os elementos da lista por diferentes percursos, estender o código fornecido a fim de obtermos uma _Lista Duplamente Encadeada_, entre outras.
+Para a parte prática, o professor Carlos forneceu um código minimamente estruturado de _Listas Simplesmente Encadeadas_ em ```Python```, porém, estas classes estavam propositalmente incompletas. Após a explicação, o professor passava a complementação destas classes como atividade para nota. O estudante era desafiado a terminar as classes, implementando os métodos com as funcionalidades faltantes, tais como: inserir e remover elementos no início e no final da lista, percorrer os elementos da lista por diferentes percursos, estender o código fornecido a fim de obtermos uma _Lista Duplamente Encadeada_, entre outras.
 
 Sedimentados os conceitos de listas encadeadas entramos em _Árvores Binárias_. Vimos dois métodos de balanceamento de árvore, o balanceamento estático e o método soviético AVL (_Adelson Velsky e Landis_). Para essa parte o professor não tinha códigos de demonstração. 
 O que fizemos foi implementar em ```Python``` quatro métodos de balanceamento, os dois vistos nas aulas, o **```estático```**, o **```dinâmico russo AVL```** e mais 2 hidridos que criamos mesclando ideias dos dois anteriores, que os chamamos de **```dinâmico-estático```** e **```dinâmico-rotacional```**.
@@ -104,7 +104,9 @@ Podemos checar a estrutura final da árvore binária, agora balanceada, mandando
 
 ## Balanceamento Dinâmico-Estático
 
- Após a inserção do elemento, avalia-se o balanceamento da árvore. 
+Este e os demais métodos a seguir serão chamados dinâmicos, porque assim que um novo valor é inserido, fazemos a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceammento já será aplicado. 
+
+Após a inserção do elemento, avalia-se o balanceamento da árvore. 
 Executa-se uma busca, a partir do noh-raiz, se há algum noh cujo módulo 
 do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). 
 Se nenhum noh desbalanceado for encontrado, a árvore está balanceada. 
