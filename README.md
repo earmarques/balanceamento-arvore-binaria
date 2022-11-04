@@ -1,6 +1,6 @@
 # Balanceamento de Árvore Binária
 
-RESUMO: RODO....
+RESUMO: TODO....
 
 ### Contexto
 
@@ -105,13 +105,12 @@ Podemos checar a estrutura final da árvore binária, agora balanceada, mandando
 
 ## Balanceamento Dinâmico-Estático
 
-Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feita a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceamento já é efetuado. No  balanceamento dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. Vamos inserir o valor 95 e entender melhor o método (figura 9).
+Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feita a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceamento já é efetuado. No método dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. Vamos inserir o valor 95 e entender melhor o método (figura 9).
 
 <img width=80% alt="Adicionando valor 95 com balanceamento dinâmico-estático" title="Adicionando valor 95 com balanceamento dinâmico-estático" src="images/dim-est_95.png"><br>
 <sup>_Figura 9: Adicionando valor 95 com balanceamento dinâmico-estático_</sup>
 
-Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, se há algum nó cujo módulo 
-do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). A inserção do nó 95 faz com que já encontremos um desequilíbrio no nó raiz 44. Entretanto, a busca por nó desequilibrado deve continuar até encotrarmos o verdadeiro nó problematico, o nó 87.
+Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, porcurando por algum nó cujo módulo do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). A inserção do nó 95 faz com que já encontremos um desequilíbrio no nó raiz 44. Entretanto, a busca por nó desequilibrado deve continuar até encotrarmos o verdadeiro nó problematico, o nó 87. O caminho que devemos prosseguir com a busca é indicado pelo sinal do fator de balanceamento. Um fb negativo como no nó 44 nos diz que podemos ignorar o ramo esquerdo, porque se houver algum nó desequilibrado mais profundo, este estará no ramo direito.  
 
 <img alt="Nó 87 causando desquilíbrio colateral no nó 44" title="Nó 87 causando desquilíbrio colateral no nó 44" src="images/dim-est_44_87.png"><br>
 <sup>_Figura 10: Nó 87 causando desquilíbrio colateral no nó 44_</sup>
