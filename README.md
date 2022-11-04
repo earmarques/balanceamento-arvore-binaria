@@ -1,6 +1,5 @@
 # Balanceamento de Árvore Binária
 
-RESUMO:...TODO
 
 ### Contexto
 
@@ -110,35 +109,38 @@ Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um
 <img width=70% alt="Adicionando valor 95 com balanceamento dinâmico-estático" title="Adicionando valor 95 com balanceamento dinâmico-estático" src="images/dim-est_95.png"><br>
 <sup>_Figura 9: Adicionando valor 95 com balanceamento dinâmico-estático_</sup>
 
-Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, procurando por algum nó cujo módulo 
-do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). A inserção do nó 95 faz com que já encontremos um desequilíbrio no nó raiz 44. Entretanto, a busca por nó desequilibrado deve continuar até encontrarmos o verdadeiro nó problemático, o nó 87. O caminho que devemos seguir na busca pelo galho desequilibrado é indicado pelo sinal do fator de balanceamento. O fb negativo do nó 44 (fb = -2), nos diz que podemos ignorar o lado esquerdo, porque se houver algum nó mais profundo que esteja desequilibrado, este estará do lado direito.
+Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, se há algum nó cujo módulo 
+do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). A inserção do nó 95 faz com que já encontremos um desequilíbrio no nó raiz 44. Entretanto, a busca por nó desequilibrado deve continuar até encotrarmos o verdadeiro nó problematico, o nó 87.
 
 <img alt="Nó 87 causando desquilíbrio colateral no nó 44" title="Nó 87 causando desquilíbrio colateral no nó 44" src="images/dim-est_44_87.png"><br>
 <sup>_Figura 10: Nó 87 causando desquilíbrio colateral no nó 44_</sup>
 
 Há ocasiões em que o primeiro nó encontrado com |fb| >= 2 ficou desbalanceado por efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar buscando até se encontrar o nó desequilibrado de maior profundidade. No caso da figura 10, o nó 44 ficou desequilibrado em decorrência do desequilíbrio do nó 87 e é apenas neste galho que deve-se efetuar o balanceamento, não no 44. 
 
-O balanceamento é realizado criando-se um galho clone auxiliar, correspondente a sub-árvore(ramo) desbalanceada, na qual o nó desequilibrado será o nó raiz dessa sub-árvore. Aplica-se o balanceamento estático ao galho desbalanceado (galho clone). Na figura 11 vemos a sub-árvore sendo criada e o método estático econtrando apenas seis elementos em sua varredura nas propriedades da árvore.
+O balanceamento é realizado criando-se um galho clone auxiliar, correspondente a sub-árvore(ramo) desbalanceada, no qual o nó desequilibrado será o nó raiz dessa sub-árvore. Aplica-se o balanceamento estático ao galho desbalanceado (galho clone). Na figura 11 vemos a sub-árvore sendo criada e o método estático econtrando apenas seis elementos em sua varredura nas propriedades da árvore.
 
 <img alt="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" title="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" src="images/galho87.png"><br>
 <sup>_Figura 11: Balanceamento estático sendo aplicado apenas ao galho desequilibrado_</sup>
 
-Uma vez que o galho esteja balanceado, precisamos determinar qual era o nó pai ao qual este galho estava ligado e por qual dos lados.
+Uma vez que o galho esteja balanceado, precisamos encontrar qual era o nó pai ao qual este galho estava ligado e por qual dos lados.
 
 <img alt="Busca pelo nó pai do galho desequilibrado" title="Busca pelo nó pai do galho desequilibrado" src="images/dim-est_galho-pai.png"><br>
 <sup>_Figura 12: Busca pelo nó pai do galho desequilibrado_</sup>
 
+Remove-se o galho desbalanceado e reinsere os elementos do galho amputado, conectando um novo galho com o mesmos elementos, mas agora balanceado. Qualquer nó superior que estivesse desequilibrado, tornar-se-iria equilibrado por corolário do reequilíbrio do ramo mais profundo. Na figura 13 temos as etapas do transplante do galho. Podemos ver que antes do galho ser serrado, havia dezoito elementos e que após a amputação do galho restaram doze elementos. Após o reimplante a árvore voltou a ter 18 nós.
 
-Em seguida, remove-se o galho desbalanceado e reinsere os elementos do 
-galho amputado, conectando o novo galho balanceado. 
-Qualquer noh superior que estivesse desequilibrado, caso houvesse, 
-tornar-se-iria equilibrado, por corolário do reequilíbrio do ramo mais profundo. 
+<img alt="Transplante de galho" title="Transplante de galho" src="images/serrote.png"><br>
+<sup>_Figura 13: Transplante de galho_</sup>
 
- A principal diferença desta abordagem em relação ao balanceamento estático 
-é que, no puramente estático, remove-se todos os elementos, isto é, 
-o balanceamento é aplicado a árvore toda, enquanto na inserção 
-dinâmica-estática remove-se apenas o ramo problemático, ou seja, 
-aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore.
+Após o transplante de galho, realiza-se uma nova checagem no balanceamento. O resultado pode ser visto na figura 14.b. Interessante comparar com as propŕiedades da árvore antes do balanceamento, presente na figura 14.a com o resultado final, na figura 14.b. Observamos que o 95 que desequilibrou a árvore está presente nos percursos tanto da árvore desbalanceada quanto na balanceada, mas notamos que a posição no percurso não coincide, evidenciando a reestruturação ocorrida. Também vemos que a altura ou profundidade mudou, reduzindo a altura de 6 para 5. 
+
+<img width=90% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
+<sup>_Figura 14.a: Propriedades da árvore antes do balanceamento_</sup>
+<img width=90% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
+<sup>_Figura 14.b: Propriedades da árvore depois do balanceamento_</sup>
+
+Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, remove-se todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática remove-se apenas o ramo problemático, ou seja, aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore.
+
 
 
 
