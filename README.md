@@ -115,14 +115,14 @@ Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa
 <img alt="Nó 87 causando desquilíbrio colateral no nó 44" title="Nó 87 causando desquilíbrio colateral no nó 44" src="images/dim-est_44_87.png"><br>
 <sup>_Figura 10: Nó 87 causando desquilíbrio colateral no nó 44_</sup>
 
-Há ocasiões em que o primeiro nó encontrado com |fb| >= 2 ficou desbalanceado por efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar buscando até se encontrar o nó desequilibrado de maior profundidade. No caso da figura 10, o nó 44 ficou desequilibrado em decorrência do desequilíbrio do nó 87 e é apenas neste galho que deve-se efetuar o balanceamento, não no 44. 
+Há ocasiões em que o primeiro nó encontrado com ```|fb| >= 2``` ficou desbalanceado por efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar buscando até se encontrar o nó desequilibrado de maior profundidade. No caso da figura 10, o nó 44 ficou desequilibrado em decorrência do desequilíbrio do nó 87 e é apenas neste galho que deve-se efetuar o balanceamento, não no 44. 
 
 O balanceamento é realizado criando-se um galho clone auxiliar, correspondente a sub-árvore(ramo) desbalanceada, no qual o nó desequilibrado será o nó raiz dessa sub-árvore. Aplica-se o balanceamento estático ao galho desbalanceado (galho clone). Na figura 11 vemos a sub-árvore sendo criada e o método estático econtrando apenas seis elementos em sua varredura nas propriedades da árvore.
 
 <img alt="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" title="Balanceamento estático sendo aplicado apenas ao galho desequilibrado" src="images/galho87.png"><br>
 <sup>_Figura 11: Balanceamento estático sendo aplicado apenas ao galho desequilibrado_</sup>
 
-Uma vez que o galho esteja balanceado, precisamos encontrar qual era o nó pai ao qual este galho estava ligado e por qual dos lados.
+Uma vez que o galho esteja balanceado, precisamos determinar qual era o nó pai ao qual este galho estava ligado e por qual dos lados.
 
 <img alt="Busca pelo nó pai do galho desequilibrado" title="Busca pelo nó pai do galho desequilibrado" src="images/dim-est_galho-pai.png"><br>
 <sup>_Figura 12: Busca pelo nó pai do galho desequilibrado_</sup>
