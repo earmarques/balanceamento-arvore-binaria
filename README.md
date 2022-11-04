@@ -135,9 +135,9 @@ Remove-se o galho desbalanceado e reinsere os elementos do galho amputado, conec
 
 Após o transplante de galho, realiza-se uma nova checagem no balanceamento. O resultado pode ser visto na figura 14.b. Interessante comparar com as propŕiedades da árvore antes do balanceamento, presente na figura 14.a com o resultado final, na figura 14.b. Observamos que o 95 que desequilibrou a árvore está presente nos percursos tanto da árvore desbalanceada quanto na balanceada, mas notamos que a posição no percurso não coincide, evidenciando a reestruturação ocorrida. Também vemos que a altura ou profundidade mudou, reduzindo a altura de 6 para 5. 
 
-<img width=90% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
+<img width=70% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
 <sup>_Figura 14.a: Propriedades da árvore antes do balanceamento_</sup>
-<img width=90% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
+<img width=70% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
 <sup>_Figura 14.b: Propriedades da árvore depois do balanceamento_</sup>
 
 Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, remove-se todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática remove-se apenas o ramo problemático, ou seja, aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore.
