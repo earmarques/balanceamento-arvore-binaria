@@ -26,7 +26,7 @@ A seguir é oferecido um menu numérico para o usuário escolher o método de ba
 <br>```9 - Sair do programa```
 
 
-<img width=60% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_abertura.png"><br>
+<img width=70% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_abertura.png"><br>
 <sup>_Figura 2: Árvore binária - Escolha do método de balanceamento_</sup>
 
 Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figura 3:
@@ -39,7 +39,7 @@ Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figu
 <br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna o primeiro menu
 <br>```9 - Sair do programa```
 
-<img width=60% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_menu2.png"><br>
+<img width=70% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_menu2.png"><br>
 <sup>_Figura 3: Escolha da ação a ser executada_</sup>
 
 Vamos tratar agora de cada um dos métodos de balacenamento, começando pelo estático. E usaremos o balanceamento estático para mostrar o que faz as opções do segundo _menu_. Nos demais balanceamentos a ação é a mesma, então vamos destacar só alguns diferenciais.
@@ -69,7 +69,7 @@ Reiniciamos a nossa árvore com a opção 7 e inserimos novamente os valores 35,
 
 Após a inserção de três elementos, agora é o momento oportuno de verificarmos o balanceamento da árvore com a opção 3. A análise do balancemanento é baseado na altura ou profundidade do nó. Na figura 6 temos o início da saída da opção 3, com altura zero para o nó raiz 44. 
 
-<img alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_no44.png"><br>
+<img width=70% alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_no44.png"><br>
 <sup>_Figura 6: Início da análise do balanceamento da árvore: altura do nó raiz_</sup>
 
 Avaliamos o balanceamento de um nó determinando seu fator de balanceamento,```fb```. O fator de balanceamento é a diferença de altura ou profundidade entre os ramos esquerdo e direito do nó. A altura ou profundidade de um ramo é a medida da quantidade de níveis ou camadas abaixo dele. Para que um nó esteja desbalanceado, o módulo do fator de balanceamento deve ser maior ou igual a 2, ```|fb| >= 2```. Se for positivo o ramo esquerdo é mais alto do que o direito, se negativo, o ramo direito é mais alto ou mais profundo do que o esquerdo.
@@ -96,7 +96,7 @@ Havendo a necessidade do balanceamento, prosseguimos com:
 
 A figura 8 traz as etapas de 2 a 5 do balanceamento estático.
 
-<img alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_balanceamento.png"><br>
+<img width=70% alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_balance.png"><br>
 <sup>_Figura 8: Efetuando o balanceamento estático_</sup>
 
 Podemos checar a estrutura final da árvore binária, agora balanceada, mandando desenhar os galhos com a opção 2 do _menu_.
