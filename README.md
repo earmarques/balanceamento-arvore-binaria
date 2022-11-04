@@ -26,7 +26,7 @@ A seguir é oferecido um menu numérico para o usuário escolher o método de ba
 <br>```9 - Sair do programa```
 
 
-<img width=70% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_abertura.png"><br>
+<img width=70% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="images/ab_abertura.png"><br>
 <sup>_Figura 2: Árvore binária - Escolha do método de balanceamento_</sup>
 
 Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figura 3:
@@ -39,7 +39,7 @@ Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figu
 <br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna o primeiro menu
 <br>```9 - Sair do programa```
 
-<img width=70% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/ab_menu2.png"><br>
+<img width=70% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="images/ab_menu2.png"><br>
 <sup>_Figura 3: Escolha da ação a ser executada_</sup>
 
 Vamos tratar agora de cada um dos métodos de balacenamento, começando pelo estático. E usaremos o balanceamento estático para mostrar o que faz as opções do segundo _menu_. Nos demais balanceamentos a ação é a mesma, então vamos destacar só alguns diferenciais.
@@ -57,26 +57,26 @@ Para desbalancear a árvore original vamos inserir três valores: 35, 37 e 5, ne
 
 É aqui que a opção ```2 - Desenhar galhos```, nos ajuda a entender o atual estado da árvore após as três inserções (figura 4).
 
-<img alt="Galhos após e inserções: 35, 37 e 5" title="Galhos após e inserções: 35, 37 e 5" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/galhos_apos_3insercoes.png"><br>
+<img alt="Galhos após e inserções: 35, 37 e 5" title="Galhos após e inserções: 35, 37 e 5" src="images/galhos_apos_3insercoes.png"><br>
 <sup>_Figura 4: Galhos após e inserções: 35, 37 e 5_</sup>
 
 Na figura 4 temos uma parte da saída da opção 2. Nela podemos ver todos os nós inseridos, o 5 do lado esquerdo do 12, o 35 à direita do 33 e o 37 à direita do 35. A ordem das inserções faz total diferença. Se tivéssemos inserido o 37 antes do 35, teríamos o galho direito do nó 33 bem diferente, com o 37  à direita do 33 no lugar do 35, e o 35 à esquerda do 37, como visto na figura 5.
 
-<img alt="Galho 33 com 37 inserido antes do 35" title="Galho 33 com 37 inserido antes do 35" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/galho33.png"><br>
+<img alt="Galho 33 com 37 inserido antes do 35" title="Galho 33 com 37 inserido antes do 35" src="images/galho33.png"><br>
 <sup>_Figura 5: Galho 33 com 37 inserido antes do 35_</sup>
 
 Reiniciamos a nossa árvore com a opção 7 e inserimos novamente os valores 35, 37 e 5, respectivamente, para retomarmos nosso exemplo.
 
 Após a inserção de três elementos, agora é o momento oportuno de verificarmos o balanceamento da árvore com a opção 3. A análise do balancemanento é baseado na altura ou profundidade do nó. Na figura 6 temos o início da saída da opção 3, com altura zero para o nó raiz 44. 
 
-<img width=70% alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_no44.png"><br>
+<img width=70% alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="images/estatico_no44.png"><br>
 <sup>_Figura 6: Início da análise do balanceamento da árvore: altura do nó raiz_</sup>
 
 Avaliamos o balanceamento de um nó determinando seu fator de balanceamento,```fb```. O fator de balanceamento é a diferença de altura ou profundidade entre os ramos esquerdo e direito do nó. A altura ou profundidade de um ramo é a medida da quantidade de níveis ou camadas abaixo dele. Para que um nó esteja desbalanceado, o módulo do fator de balanceamento deve ser maior ou igual a 2, ```|fb| >= 2```. Se for positivo o ramo esquerdo é mais alto do que o direito, se negativo, o ramo direito é mais alto ou mais profundo do que o esquerdo.
 
 Na figura 7 temos a análise gráfica dos nós 12 e 33. Vemos que o nó 12 está equilibrado, pois está com fator de balanceamento +1, isto é, a diferença entre a profundidade dos ramos esquerdo e direito é de apenas um, e o sinal "+" indica que o ramo maior está do lado esquerdo. Já o nó 33 está desbalanceado (critério: |fator de balanceamento| >= 2), tendo em vista que pelo lado esquerdo não há nenhum outro nó (profundidade zero), entretanto, pelo lado direito há dois níveis de nó (profundidade 2), o nó 35 e logo mais abaixo o 37, deixando seu fator de balanceamento igual a 2 negativo.
 
-<img alt="Análise dos nós 12 e 33" title="Análise dos nós 12 e 33" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_no12_33.png"><br>
+<img alt="Análise dos nós 12 e 33" title="Análise dos nós 12 e 33" src="images/estatico_no12_33.png"><br>
 <sup>_Figura 7: Análise dos nós 12 e 33_</sup>
 
 ---
@@ -96,7 +96,7 @@ Havendo a necessidade do balanceamento, prosseguimos com:
 
 A figura 8 traz as etapas de 2 a 5 do balanceamento estático.
 
-<img width=70% alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="https://github.com/earmarques/balanceamento-arvore-binaria/blob/main/images/estatico_balance.png"><br>
+<img width=70% alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="images/estatico_balance.png"><br>
 <sup>_Figura 8: Efetuando o balanceamento estático_</sup>
 
 Podemos checar a estrutura final da árvore binária, agora balanceada, mandando desenhar os galhos com a opção 2 do _menu_.
@@ -104,23 +104,20 @@ Podemos checar a estrutura final da árvore binária, agora balanceada, mandando
 
 ## Balanceamento Dinâmico-Estático
 
-Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feito a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceammento já será aplicado. No  balanceamento dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. 
+Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feito a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceammento já será aplicado. No  balanceamento dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. Vamos inserir o valor 95 e entender melhor o este método (figura 9).
 
+<img width=70% alt="Adicionando valor 95 com balanceamento dinâmico-estático" title="Adicionando valor 95 com balanceamento dinâmico-estático" src="images/dim-est_95.png"><br>
+<sup>_Figura 9: Adicionando valor 95 com balanceamento dinâmico-estático_</sup>
 
+Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, se há algum nó cujo módulo 
+do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). A inserção do nó 95 faz com que já encontremos o desequilíbrio no nó raiz 44. Entretanto, a busca por nó desequilibrado deve continuar até encotrarmos o verdadeiro nó problematico, o nó 87.
 
-Após a inserção do elemento, avalia-se o balanceamento da árvore. 
-Executa-se uma busca, a partir do noh-raiz, se há algum noh cujo módulo 
-do fator de balanceamento seja maior ou igual a 2 (fb >=|2|). 
-Se nenhum noh desbalanceado for encontrado, a árvore está balanceada. 
+<img alt="Nó 87 causando desquilíbrio colateral no nó 44" title="Nó 87 causando desquilíbrio colateral no nó 44" src="images/dim-est_44_87.png"><br>
+<sup>_Figura 10: Nó 87 causando desquilíbrio colateral no nó 44_</sup>
 
- Caso seja encontrado, a árvore está desbalanceada e a busca deve continuar, 
-descendo pelo galho desequilíbrado, indicado pelo sinal do fator de balanceamento. 
-Há ocasiões em que esse primeiro noh encontrado ficou desbalanceado por 
-efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar 
-buscando até se encontrar o noh desequilibrado de maior profundidade. 
-Encontrado, procede-se o balanceamento. 
+Há ocasiões em que o primeiro nó encontrado com |fb| >= 2 ficou desbalanceado por efeito colateral de um desequilíbrio mais profundo. Portanto, deve-se continuar buscando até se encontrar o nó desequilibrado de maior profundidade. No caso da figura 10, o nó 44 ficou desequilibrado em decorrência do desequilíbrio do nó 87 e é apenas neste galho que deve-se efetuar o balanceamento, não no 44. 
 
- O balanceamento é realizado criando-se um galho clone auxiliar, correspondente 
+O balanceamento é realizado criando-se um galho clone auxiliar, correspondente 
 a sub-árvore(ramo) desbalanceada, no qual o noh desequilibrado será o noh-raiz. 
 Aplica-se o balanceamento estático ao galho desbalanceado (galho clone). 
 Em seguida, remove-se o galho desbalanceado e reinsere os elementos do 
