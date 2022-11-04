@@ -1,5 +1,6 @@
 # Balanceamento de Árvore Binária
 
+RESUMO: RODO....
 
 ### Contexto
 
