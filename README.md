@@ -104,7 +104,9 @@ Podemos checar a estrutura final da árvore binária, agora balanceada, mandando
 
 ## Balanceamento Dinâmico-Estático
 
-Este e os demais métodos a seguir serão chamados dinâmicos, porque assim que um novo valor é inserido, fazemos a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceammento já será aplicado. 
+Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feito a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceammento já será aplicado. No  balanceamento dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. 
+
+
 
 Após a inserção do elemento, avalia-se o balanceamento da árvore. 
 Executa-se uma busca, a partir do noh-raiz, se há algum noh cujo módulo 
