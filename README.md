@@ -27,7 +27,7 @@ A seguir é oferecido um menu numérico para o usuário escolher o método de ba
 <br>```9 - Sair do programa```
 
 
-<img width=70% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="images/ab_abertura.png"><br>
+<img width=80% alt="Árvore binária - Escolha do método de balanceamento" title="Árvore binária - Escolha do método de balanceamento" src="images/ab_abertura.png"/><br>
 <sup>_Figura 2: Árvore binária - Escolha do método de balanceamento_</sup>
 
 Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figura 3:
@@ -40,7 +40,7 @@ Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figu
 <br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna o primeiro menu
 <br>```9 - Sair do programa```
 
-<img width=70% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="images/ab_menu2.png"><br>
+<img width=80% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="images/ab_menu2.png"><br>
 <sup>_Figura 3: Escolha da ação a ser executada_</sup>
 
 Vamos tratar agora de cada um dos métodos de balacenamento, começando pelo estático. E usaremos o balanceamento estático para mostrar o que faz as opções do segundo _menu_. Nos demais balanceamentos a ação é a mesma, então vamos destacar só alguns diferenciais.
@@ -70,7 +70,7 @@ Reiniciamos a nossa árvore com a opção 7 e inserimos novamente os valores 35,
 
 Após a inserção de três elementos, agora é o momento oportuno de verificarmos o balanceamento da árvore com a opção 3. A análise do balancemanento é baseado na altura ou profundidade do nó. Na figura 6 temos o início da saída da opção 3, com altura zero para o nó raiz 44. 
 
-<img width=70% alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="images/estatico_no44.png"><br>
+<img width=80% alt="Início da análise do balanceamento da árvore, altura do nó raiz" title="Início da análise do balanceamento da árvore, altura do nó raiz" src="images/estatico_no44.png"><br>
 <sup>_Figura 6: Início da análise do balanceamento da árvore: altura do nó raiz_</sup>
 
 Avaliamos o balanceamento de um nó determinando seu fator de balanceamento,```fb```. O fator de balanceamento é a diferença de altura ou profundidade entre os ramos esquerdo e direito do nó. A altura ou profundidade de um ramo é a medida da quantidade de níveis ou camadas abaixo dele. Para que um nó esteja desbalanceado, o módulo do fator de balanceamento deve ser maior ou igual a 2, ```|fb| >= 2```. Se for positivo o ramo esquerdo é mais alto do que o direito, se negativo, o ramo direito é mais alto ou mais profundo do que o esquerdo.
@@ -97,7 +97,7 @@ Havendo a necessidade do balanceamento, prosseguimos com:
 
 A figura 8 traz as etapas de 2 a 5 do balanceamento estático.
 
-<img width=70% alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="images/estatico_balance.png"><br>
+<img width=80% alt="Efetuando o balanceamento estático" title="Efetuando o balanceamento estático" src="images/estatico_balance.png"><br>
 <sup>_Figura 8: Efetuando o balanceamento estático_</sup>
 
 Podemos checar a estrutura final da árvore binária, agora balanceada, mandando desenhar os galhos com a opção 2 do _menu_.
@@ -107,7 +107,7 @@ Podemos checar a estrutura final da árvore binária, agora balanceada, mandando
 
 Este e os demais métodos a seguir são chamados dinâmicos, porque assim que um novo valor é inserido, é feita a avaliação do balanceamento da árvore, e constatando um desequilíbrio, o balanceamento já é efetuado. No  balanceamento dinâmico-estático o balanceamento é aplicado somente no nó desequilibrado e não em toda a árvore. Vamos inserir o valor 95 e entender melhor o método (figura 9).
 
-<img width=70% alt="Adicionando valor 95 com balanceamento dinâmico-estático" title="Adicionando valor 95 com balanceamento dinâmico-estático" src="images/dim-est_95.png"><br>
+<img width=80% alt="Adicionando valor 95 com balanceamento dinâmico-estático" title="Adicionando valor 95 com balanceamento dinâmico-estático" src="images/dim-est_95.png"><br>
 <sup>_Figura 9: Adicionando valor 95 com balanceamento dinâmico-estático_</sup>
 
 Após a inserção do elemento 95, avalia-se o balanceamento da árvore. Executa-se uma busca, a partir do nó raiz, se há algum nó cujo módulo 
@@ -135,9 +135,9 @@ Remove-se o galho desbalanceado e reinsere os elementos do galho amputado, conec
 
 Após o transplante de galho, realiza-se uma nova checagem no balanceamento. O resultado pode ser visto na figura 14.b. Interessante comparar com as propŕiedades da árvore antes do balanceamento, presente na figura 14.a com o resultado final, na figura 14.b. Observamos que o 95 que desequilibrou a árvore está presente nos percursos tanto da árvore desbalanceada quanto na balanceada, mas notamos que a posição no percurso não coincide, evidenciando a reestruturação ocorrida. Também vemos que a altura ou profundidade mudou, reduzindo a altura de 6 para 5. 
 
-<img width=70% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
+<img width=80% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
 <sup>_Figura 14.a: Propriedades da árvore antes do balanceamento_</sup>
-<img width=70% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
+<img width=80% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
 <sup>_Figura 14.b: Propriedades da árvore depois do balanceamento_</sup>
 
 Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, remove-se todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática remove-se apenas o ramo problemático, ou seja, aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore.
