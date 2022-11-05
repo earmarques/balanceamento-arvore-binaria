@@ -37,7 +37,7 @@ Não importa o balanceamento escolhido, o segundo menu é sempre o mesmo da figu
 <br>```3 - Checar balancenamento da árvore``` |=> avalia o balancenamento de cada nó, informando o nó desbalanceado se for o caso
 <br>```4 - Balancear árvore binária ``` |=> executa o balanceamento e vai imprimindo todas as etapas do processo
 <br>```7 - Reiniciar árvore binária original ``` |=> descarta a árvore que estiver sendo usada e recria a árvore base de testes
-<br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna o primeiro menu
+<br>```8 - Voltar à escolha do método de balanceamento ``` |=> retorna ao primeiro menu e reinicia a árvore
 <br>```9 - Sair do programa```
 
 <img width=80% alt="Escolha da ação a ser executada" title="Escolha da ação a ser executada" src="images/ab_menu2.png"><br>
@@ -150,11 +150,44 @@ Pela figura 15 vemos que o nó 87 desequilibrado fora posicionado à direita do 
 
 <sup>_Figura 15: Galho reequilibrado_</sup>
 
-
-
+---
 
 ## Balanceamento Dinâmico-Rotacional
 
+Similar a inserção dinâmica-estática, após fazermos a inserção do nó, avaliamos o balanceamento da árvore, buscando o nó de maior profundidade cujo módulo do fator de balanceamento seja maior ou igual a 2 (|fb| >= 2). 
+A diferença está na forma de fazer o balanceamento. 
+
+Neste método, aplicamos a rotação ao galho desbalanceado, a mesma rotação do método AVL desenvolvida pelos russos. Identificamos o tipo de rotação cabível e aplicamos a rotação adequada ao galho desbalanceado. 
+
+Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz para as folhas, como na inserção dinâmica-estática, porém, para o balanceamento, o método dinâmico-rotacional utiliza as rotações do método russo AVL. As rotações aplicáveis são: 
+
+- simples direita; 
+- simples esquerda;
+- dupla direita e
+- dupla esquerda.
+
+O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós buscamos ser o mais claro e didático que conseguimos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada devida a inserção de um novo valor.
+No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
+
+<img width=80% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
+<sup>_Figura 15: Modelagem e concepção para identificar os tipos de rotações_</sup>
+
+Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema com a abstração - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho.
+Com os desenhos dos arranjos das caixinhas com os nós identificados com os varões da família, fica mais fácil ao estudante abstrair as rotações. 
+
+
+--------------------------------------------------------------------------------
+ Rotações:
+	SIMPLES_DIREITA:  inserir noh's 15 ou 50
+	SIMPLES_ESQUERDA: inserir noh 95
+	DUPLA_DIREITA:    inserir noh 62
+	DUPLA_ESQUERDA_*: inserir noh 70, seguido de 73 e por fim o noh 68
+
+ '*' - Tendo por base a árvore original de testes, não é possível obtermos 
+ a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, 
+ a inserção dos noh's 70 e 73 não desequilibram a árvore, apenas a modifica, 
+ para que o desequilíbrio gerado pela adição do noh 68 resulte em uma 
+ rotação dupla-esquerda, a fim de se restabelecer o balanceamento da árvore.
 
 
 
