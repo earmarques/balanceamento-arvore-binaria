@@ -161,18 +161,18 @@ Neste método, aplicamos a rotação ao galho desbalanceado, a mesma rotação d
 
 Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz para as folhas, como na inserção dinâmica-estática, porém, para o balanceamento, o método dinâmico-rotacional utiliza as rotações do método russo AVL. As rotações aplicáveis são: 
 
-- simples direita; 
-- simples esquerda;
-- dupla direita e
-- dupla esquerda.
+- simples-direita; 
+- simples-esquerda;
+- dupla-direita e
+- dupla-esquerda.
 
 O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós buscamos ser o mais claro e didático que conseguimos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada devida a inserção de um novo valor.
 No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
 
 <img width=90% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
-<sup>_Figura 15: Modelagem e concepção para identificar os tipos de rotações_</sup>
+<sup>_Figura 16: Modelagem e concepção para identificar os tipos de rotações_</sup>
 
-Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema de acordo com a abstração da modelagem - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho. Com os desenhos dos arranjos das caixinhas contendo os nós identificados como os varões da família, fica mais fácil ao estudante abstrair as rotações. 
+Para a modelagem da rotações, nós asbstraimos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema de acordo com a abstração da modelagem - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho. Com os desenhos dos arranjos das caixinhas contendo os nós identificados como os varões da família, fica mais fácil ao estudante abstrair as rotações. 
 
 Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específico. As inserções sugeridas são para a árvore base em sua configuração original. Portanto, antes de seguir a sugestão da tabela é preciso fazer a opção 7 para reinicializar a árvore. E estas mesmas sugestões podem ser obtidas durante as execução do programa, na opção ```0 - Informações sobre o método```.
 
@@ -187,15 +187,26 @@ Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específi
 
 O destaque (**\***) na rotação dupla esquerda chama atenção para o fato de que, tendo por base a árvore original de testes, não é possível obtermos a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, a inserção dos nós 70 e 73 não desequilibram a árvore, apenas a modifica, para que o desequilíbrio gerado pela adição do nó 68 resulte em uma rotação dupla-esquerda.
 
-Pelo fato do programa informar cada etapa do processo, a saída do programa é extensa. Vamos mostrar apenas uma rotação, a do tipo simples para esquerda, com a inserção do valor 95, que já sabemos que provoca um desequilíbrio no nó 87. As demais rotações é conveniente que o leitor execute o programa e leia com calma as informações e depois vá até o código que passa ainda mais detalhes.
+Pelo fato do programa informar cada etapa do processo, a saída do programa é extensa. Vamos mostrar apenas uma rotação, a do tipo simples para esquerda, com a inserção do valor 95, que já sabemos que provoca um desequilíbrio no nó 87. Às demais rotações é conveniente que o leitor execute o programa e leia com calma as informações e depois vá até o código para ter ainda mais detalhes.
 
-Feita a identificação do nó desequilibrado, no caso o nó-avô 87, precisamos determinar o tipo rotação que corrige o desbalanceamento. Na figura 16 vemos o tipo de rotação sendo identificado e um quadro muito importante ao entendimento, pois traz a identificação de quais nós cumprem quais papeis na hierarquia dos varões da família. No quadro vemos o nó-avô  desequilibrado (87), mas não vemos o o netinho (95) que nasceu, pois ele está segurando a mão esquerda do nó-filho (96). Isso porque na rotação iremos movimentar o nó-filho (96) e com ele vai o netinho junto. Para não poluir de informação, optamos por compor o quadro apenas com os nós que estão diretamente envolvidos no reposicionamento. 
+Feita a identificação do nó desequilibrado, no caso o nó-avô 87, precisamos determinar o tipo rotação que corrige o desbalanceamento. Na figura 17 vemos o tipo de rotação sendo determinado e um quadro muito importante ao entendimento, pois traz a identificação de quais nós cumprem quais papeis na hierarquia dos varões da família. No quadro vemos o nó ```avo```  desequilibrado (87), mas não vemos o netinho (95) que nasceu, pois ele está segurando a mão esquerda do nó ```filho``` (96). Na rotação iremos movimentar o nó ```filho``` (96) e com ele vai o ```neto_esquerdo``` (95) junto. Para não poluir de informação, optamos por compor o quadro apenas com os nós que estão diretamente envolvidos no reposicionamento. 
 
 <img width=80% alt="Rotação simples para esquerda" title="Rotação simples para esquerda" src="images/simples_esquerda.png"><br>
-<sup>_Figura 16: Rotação simples para esquerda_</sup>
+<sup>_Figura 17: Rotação simples para esquerda_</sup>
+
+As rotações inicialmente vão paracer um tanto confusas, com nós sendo trocados de posição, e para tanto, devem eliminar ligações com alguns nós, recricar novas ligações com outros nós e algumas devem ser mantidas. Optamos por uma abordagem analítica, somente um efeito em cada movimento. Adotamos por indicar **\"\[\"** quando estivermos rompendo as ligações entre nós A e B quaisquer. Usamos **\"\]\"** para denotar que estamos estabelencendo vinculos. Não fazemos ligações entre nós antes de que a posição que o nó irá ocupar esteja vaga.
+
+Se dois nós A e B estão conectados, então eles têm reciprocidade na referência, isto é, internamente, o objeto A tem referência ao objeto B, e o objeto B tem uma referência ao objeto A. Devemos ser cuidadosos para que quando anulamos a referência de B em A (A não está mais ligado a B), também anulemos a referência do objeto A dentro do objeto B. Senão, A perde o vínculo com B, mas B não está sabendo de nada e acredita que ainda esteja ligado a A.
+
+Na figura 18 temos o primeiro movimento **\"\[\"**, a quebra de alguns vínculos. A três etapas genéricas de quebra de ligação estão numeradas por \[#.1, \[#.2 e \[#.3. Em cada uma delas desenhando como estava antes e como ficou depois. Na etapa \[#.1, por exemplo, a norma geral é desprender o avô do bisavô, se o bisavô existir. Por isso que o quadro da figura 17 é um auxiliar importante. O nó avo é o 87 e o bisavo o 76. Depois da operação vemos a vacância do lado direito, indicando que bisavo e avo já não se conhecem mais. As etapas \[#.2 e \[#.3 seguem a mesma ideia.
+
+<img alt="Quebra de laços familiares: quebrando referências mútuas" title="Quebra de laços familiares: quebrando referências mútuas" src="images/quebra_lacos.png"><br>
+<sup>_Figura 18: Quebra de laços familiares: quebrando referências mútuas_</sup>
+
+Na figura 19 temos o segundo movimento **\"\]\"**, o estabelecimento de novos vínculos entre os nós. Note que agora as etapas estão em ordem decrescente, #.3\], #.2\] e #.1\]. Isso porque as etapas restabelecemm, na ordem respectiva, os laços rompidos no movimento anterior. Nós tratamos da etapa \[#.1 na qual o bisavo 76 perdeu toda a linhagem de um de seus filhos (o nó avo 87). Na última etapa realizada, em #.1] reconectamos a prole ao nó bisavo 76, através do nó pai 94, que agora ocupará o lugar do nó avo 87. Nos faz lembrar da teoria de reencarnações presente em algumas religiões, em que seu avô pode ter sido seu filho em outra vida e etc..
+
+<img alt="Reencarnações fazendo novos laços familiares: estabelecendo novas conecções" title="Reencarnações fazendo novos laços familiares: estabelecendo novas conecções" src="images/reconecta_lacos.png"><br>
+<sup>_Figura 19: Reencarnações fazendo novos laços familiares: estabelecendo novas conecções_</sup>
 
 
-
- 
-ededr
 
