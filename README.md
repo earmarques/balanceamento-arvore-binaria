@@ -168,7 +168,7 @@ Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz 
 - dupla-direita e
 - dupla-esquerda.
 
-O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós buscamos ser o mais claro e didático que conseguimos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada, a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada, em decorrência da inserção de um novo valor.
+O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós procuramos ser o mais claro e didático que pudéssemos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada, a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada, em decorrência da inserção de um novo valor.
 No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
 
 <img width=90% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
