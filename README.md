@@ -169,25 +169,25 @@ Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz 
 O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós buscamos ser o mais claro e didático que conseguimos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada devida a inserção de um novo valor.
 No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
 
-<img alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
+<img width=90% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
 <sup>_Figura 15: Modelagem e concepção para identificar os tipos de rotações_</sup>
 
-Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema com a abstração - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho.
-Com os desenhos dos arranjos das caixinhas com os nós identificados com os varões da família, fica mais fácil ao estudante abstrair as rotações. 
+Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema de acordo com a abstração da modelagem - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho. Com os desenhos dos arranjos das caixinhas contendo os nós identificados como os varões da família, fica mais fácil ao estudante abstrair as rotações. 
+
+Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específico. As inserções sugeridas são para a árvore base em sua configuração original. Portanto, antes de seguir a sugestão da tabela é preciso fazer a opção 7 para reinicializar a árvore.
+
+| Rotação | Sugestão |
+| -- | -- |
+```SIMPLES_DIREITA```        | inserir nó 15 ou 50
+```SIMPLES_ESQUERDA```       | inserir nó 95
+```DUPLA_DIREITA```          | inserir nó 62 ou 22
+```DUPLA_ESQUERDA```(**\***) | inserir 70, seguido de 73 e por fim o nó 68
+
+ <sup> _Tabela 1: Sugestões de inserções de valores para rotações específicas_ </sup>
+
+O destaque (**\***) na rotação dupla esquerda chama atenção para o fato de que, tendo por base a árvore original de testes, não é possível obtermos a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, a inserção dos nós 70 e 73 não desequilibram a árvore, apenas a modifica, para que o desequilíbrio gerado pela adição do nó 68 resulte em uma rotação dupla-esquerda.
 
 
---------------------------------------------------------------------------------
- Rotações:
-	SIMPLES_DIREITA:  inserir noh's 15 ou 50
-	SIMPLES_ESQUERDA: inserir noh 95
-	DUPLA_DIREITA:    inserir noh 62
-	DUPLA_ESQUERDA_*: inserir noh 70, seguido de 73 e por fim o noh 68
-
- '*' - Tendo por base a árvore original de testes, não é possível obtermos 
- a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, 
- a inserção dos noh's 70 e 73 não desequilibram a árvore, apenas a modifica, 
- para que o desequilíbrio gerado pela adição do noh 68 resulte em uma 
- rotação dupla-esquerda, a fim de se restabelecer o balanceamento da árvore.
-
-
+ 
+ededr
 
