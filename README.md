@@ -80,8 +80,6 @@ Na figura 7 temos a análise gráfica dos nós 12 e 33. Vemos que o nó 12 está
 <img alt="Análise dos nós 12 e 33" title="Análise dos nós 12 e 33" src="images/estatico_no12_33.png"><br>
 <sup>_Figura 7: Análise dos nós 12 e 33_</sup>
 
----
-
 Fazer o balanceamento pelo método estático é muito dispendioso computacionalmente. Devemos recriar a árvore inteira, removendo todos os elementos ou criando uma totalmente nova, e depois fazer a inserção de todos os elementos na "ordem certa". Se fossemos empregar este método em produção, teriamos duas opções de política a adotar: ou recriar a árvore inteira a cada inserção a fim de que ela esteja sempre balanceada, ou tolerar temporariamente uma árvore desbalanceada e aplicar o balancemanento a um determinado intervalo de tempo, a cada 24h em um horário conveniente, por exemplo. Árvores desbalanceadas deixam a procura da informação mais lenta, pois faremos um maior número de comparações. Em suma, ou temos a inserção demorada e as buscas rápidas ou daremos prioridade às inserções e deixaremos as consultas mais lentas; há que se ponderar pela demanda.
 
 Já mencionamos que a ordem com que se insere os valores afeta a estrutura da árvore. Portanto, precisamos ordenar as inserções de forma que a árvore obtida seja balanceada. Recomendamos consultar o código para saber como estabelecemos esta ordenação otimizada com medianas. 
