@@ -139,12 +139,17 @@ Concluído o transplante de galho, fazemos uma nova checagem do balanceamento. O
 <img width=80% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
 <sup>_Figura 14.b: Propriedades da árvore depois do balanceamento_</sup>
 
-Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, remove-se todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática remove-se apenas o ramo problemático, ou seja, aplica-se o balanceamento apenas a um galho, sem afetar o restante da árvore. Logo, basta olharmos como ficou o novo galho enxertado.
+Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, removemos todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática removemos apenas o ramo problemático, ou seja, aplicamos o balanceamento apenas a um galho, sem afetar o restante da árvore. Logo, basta olharmos como ficou o novo galho enxertado.
 
 Pela figura 15 vemos o nó 87 que estava desequilibrado foi posicionado a direita do 83. O nó 91 que era um nó-folha se tornou o nó raiz do galho, tendo o 95 recém inserido a sua direita, no lugar do 94 que agora está tornou-se um nó folha, pendurado a esquerda do 94.
 
-<img alt="Galho reequilibrado" title="Galho reequilibrado" src="images/din-est_galho-novo.png"><br>
+
+Galho antes do balanceamento             |  Galho depois do balanceamento
+:-------------------------:|:-------------------------:
+![ANTES](images/din-est_galho-velho.png)  |  ![DEPOIS](images/din-est_galho-novo.png)
 <sup>_Figura 15: Galho reequilibrado_</sup>
+
+
 
 ## Balanceamento Dinâmico-Rotacional
 
