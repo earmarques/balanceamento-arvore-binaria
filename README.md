@@ -154,7 +154,7 @@ Pela figura 15 vemos que o nó 87 desequilibrado fora posicionado à direita do 
 
 ## Balanceamento Dinâmico-Rotacional
 
-Similar a inserção dinâmica-estática, após fazermos a inserção do nó, avaliamos o balanceamento da árvore, buscando o nó de maior profundidade cujo módulo do fator de balanceamento seja maior ou igual a 2 (|fb| >= 2). 
+Similar a inserção dinâmica-estática, após fazermos a adição do nó, avaliamos o balanceamento da árvore, buscando o nó de maior profundidade cujo módulo do fator de balanceamento seja maior ou igual a 2 (|fb| >= 2). 
 A diferença está na forma de fazer o balanceamento. 
 
 Neste método, aplicamos a rotação ao galho desbalanceado, a mesma rotação do método AVL desenvolvida pelos russos. Identificamos o tipo de rotação cabível e aplicamos a rotação adequada ao galho desbalanceado. 
