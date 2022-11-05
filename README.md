@@ -174,7 +174,7 @@ No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário par
 
 Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema de acordo com a abstração da modelagem - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho. Com os desenhos dos arranjos das caixinhas contendo os nós identificados como os varões da família, fica mais fácil ao estudante abstrair as rotações. 
 
-Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específico. As inserções sugeridas são para a árvore base em sua configuração original. Portanto, antes de seguir a sugestão da tabela é preciso fazer a opção 7 para reinicializar a árvore.
+Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específico. As inserções sugeridas são para a árvore base em sua configuração original. Portanto, antes de seguir a sugestão da tabela é preciso fazer a opção 7 para reinicializar a árvore. E estas mesmas sugestões podem ser obtidas durante as execução do programa, na opção ```0 - Informações sobre o método```.
 
 | Rotação | Sugestão |
 | -- | -- |
@@ -186,6 +186,14 @@ Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específi
  <sup> _Tabela 1: Sugestões de inserções de valores para rotações específicas_ </sup>
 
 O destaque (**\***) na rotação dupla esquerda chama atenção para o fato de que, tendo por base a árvore original de testes, não é possível obtermos a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, a inserção dos nós 70 e 73 não desequilibram a árvore, apenas a modifica, para que o desequilíbrio gerado pela adição do nó 68 resulte em uma rotação dupla-esquerda.
+
+Pelo fato do programa informar cada etapa do processo, a saída do programa é extensa. Vamos mostrar apenas uma rotação, a do tipo simples para esquerda, com a inserção do valor 95, que já sabemos que provoca um desequilíbrio no nó 87. As demais rotações é conveniente que o leitor execute o programa e leia com calma as informações e depois vá até o código que passa ainda mais detalhes.
+
+Feita a identificação do nó desequilibrado, no caso o nó-avô 87, precisamos determinar o tipo rotação que corrige o desbalanceamento. Na figura 16 vemos o tipo de rotação sendo identificado e um quadro muito importante ao entendimento, pois traz a identificação de quais nós cumprem quais papeis na hierarquia dos varões da família. No quadro vemos o nó-avô  desequilibrado (87), mas não vemos o o netinho (95) que nasceu, pois ele está segurando a mão esquerda do nó-filho (96). Isso porque na rotação iremos movimentar o nó-filho (96) e com ele vai o netinho junto. Para não poluir de informação, optamos por compor o quadro apenas com os nós que estão diretamente envolvidos no reposicionamento. 
+
+<img width=80% alt="Rotação simples para esquerda" title="Rotação simples para esquerda" src="images/simples_esquerda.png"><br>
+<sup>_Figura 16: Rotação simples para esquerda_</sup>
+
 
 
  
