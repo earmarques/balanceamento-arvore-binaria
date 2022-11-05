@@ -161,7 +161,7 @@ A diferença está na forma de fazer o balanceamento.
 
 Neste método, aplicamos a rotação ao galho desbalanceado, a mesma rotação do método AVL desenvolvida pelos russos. Identificamos o tipo de rotação cabível e aplicamos a rotação adequada ao galho desbalanceado. 
 
-Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz para as folhas, como na inserção dinâmica-estática, porém, para o balanceamento, o método dinâmico-rotacional utiliza as rotações do método russo AVL. As rotações aplicáveis são: 
+Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz para as folhas, como na inserção dinâmica-estática, porém para o balanceamento, o método dinâmico-rotacional utiliza as rotações do método russo AVL. As rotações aplicáveis são: 
 
 - simples-direita; 
 - simples-esquerda;
