@@ -169,7 +169,7 @@ Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz 
 O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós buscamos ser o mais claro e didático que conseguimos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual o tipo de rotação deve ser aplicada a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada devida a inserção de um novo valor.
 No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
 
-<img width=80% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
+<img alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
 <sup>_Figura 15: Modelagem e concepção para identificar os tipos de rotações_</sup>
 
 Para a abstração nós modelamos os arranjos de galhos como uma hierarquia patriarcal de quatro níveis, e identificamos os nós relevantes as rotações como: avô, pai, filho e neto. O nó-avô é o nó-raiz do galho desbalanceado. Podemos dizer que o nó-raiz ficou desbalanceado pela adição de um nó-folha, todavia, convidamos o leitor a pensar a situação-problema com a abstração - o nó-avô ficou desbalanceado ("babão") com o nascimento de um netinho.
