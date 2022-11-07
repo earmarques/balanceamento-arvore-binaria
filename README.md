@@ -260,6 +260,7 @@ Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos c
     # Conferindo o Balanceamento
     ...
 ```
+<sup>_Listagem 1: Método público para inserção com balanceamento AVL_</sup>
 
 O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que fazemos no método é empilhar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual(atributo ```#conteudo```), seguimos descendo pelos galhos à esquerda ou à direita, a depender do resultado da comparação. Alcançada a extremidade da árvore, criamos o nó-folha e o adicionamos à pilha do histórico ("registro de nascimento").
 
@@ -309,6 +310,7 @@ def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug
     return self.busca_noh(valor, debug=False)
     
 ```
+<sup>_Listagem 2: Partes essenciais à lógica da inserção com balanceamento AVL_</sup>
 
 Terminada a adição do novo valor, precisamos verificar se afetou o balanceamento da árvore, e se for o caso, corrigir. Iniciamos desempilhando os dois últimos nós do histórico (listagem 3). O nó topo da pilha é o nó que acabara de ser inserido, o chamamos de ```noh-filho```. O noh-pai é o nó-raiz do noh-filho. 
 
@@ -318,6 +320,8 @@ Terminada a adição do novo valor, precisamos verificar se afetou o balanceamen
   noh_pai   = historico_geracoes.pop()
   ...
 ```
+<sup>_Listagem 3: Inicialização das variáveis de controle do laço de subida pelos nós da árvore_</sup>
+
 Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo caminho que descemos, desempilhando o histórico de gerações até terminar a pilha - quando ```noh-filho == None``` saímos do ```while```.
 
 ```py
@@ -327,6 +331,8 @@ Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo ca
   noh_pai   = historico_geracoes.pop() if historico_geracoes else None
   ...
 ```
+<sup>_Listagem 4: Atualização das varáveis de controle do laço de subida_</sup>
+
 No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada (listagem 5). 
 
 
@@ -336,13 +342,14 @@ if abs(balanceamento) > 1:  # noh desbalanceado
   self.rotacionar(noh_filho, noh_pai, debug)
   break   # pára tudo, serviço pronto
 ```
+</sup>_Identificação do desequilíbrio e balanceamento por rotação_</sup>
 
 A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotacional, a diferença está na busca ascendente ao desequilíbrio, de baixo para cima, a partir do nó recém inserido. Na figura 20 temos a narrativa da escalada pela árvore do nó desbalanceado 87, depois que inserimos o nó 95.
 
 <img alt="Busca ascendente pelo desequilíbrio" title="Busca ascendente pelo desequilíbrio" src="images/escalada.png"><br>
 <sup>_Figura 20: Busca ascendente pelo desequilíbrio_</sup>
 
-
+Assim concluímos a apresentação do nosso trabalho oferecido ao estimado Professor Carlos. Esperamos que tanto este quanto o de [algoritmos de ordenação](https://github.com/earmarques/metodos-ordenacao) possa elevar ainda mais o nível de excelência das aulas do querido Mestre.
 
 
 
