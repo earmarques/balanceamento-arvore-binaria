@@ -310,7 +310,7 @@ def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug
     
 ```
 
-Terminada a adição do novo valor precisamos verificar se afetou o balanceamento da árvore, e se for o caso, corrigir. Iniciamos desempilhando os dois últimos nós do histórico (listagem 3). O nó topo da pilha é o nó que acabara de ser inserido, o chamamos de ```noh-filho```. O noh-pai é o nó-raiz do noh-filho. 
+Terminada a adição do novo valor, precisamos verificar se afetou o balanceamento da árvore, e se for o caso, corrigir. Iniciamos desempilhando os dois últimos nós do histórico (listagem 3). O nó topo da pilha é o nó que acabara de ser inserido, o chamamos de ```noh-filho```. O noh-pai é o nó-raiz do noh-filho. 
 
 ```py
   ...
