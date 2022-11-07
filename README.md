@@ -67,6 +67,8 @@ Na figura 4 temos uma parte da saída da opção 2. Nela podemos ver todos os n�
 <img alt="Galho 33 com 37 inserido antes do 35" title="Galho 33 com 37 inserido antes do 35" src="images/galho33.png"><br>
 <sup>_Figura 5: Galho 33 com 37 inserido antes do 35_</sup>
 
+Gostaríamos de fazer a observação de que na implementação da opção 2 que desenha os números dentro das caixinhas, nós programamos a caixa para conter números de até dois algarismos. Portanto, pedimos ao usuário a etiqueta de inserir valores apenas até dois digitos, no máximo o número 99. 
+
 Reiniciamos a nossa árvore com a opção 7 e inserimos novamente os valores 35, 37 e 5, respectivamente, para retomarmos nosso exemplo.
 
 Após a inserção de três elementos, agora é o momento oportuno de verificarmos o balanceamento da árvore com a opção 3. A análise do balancemanento é baseado na altura ou profundidade do nó. Na figura 6 temos o início da saída da opção 3, com altura zero para o nó raiz 44. 
