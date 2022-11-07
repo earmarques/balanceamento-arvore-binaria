@@ -342,7 +342,7 @@ if abs(balanceamento) > 1:  # noh desbalanceado
   self.rotacionar(noh_filho, noh_pai, debug)
   break   # pára tudo, serviço pronto
 ```
-<sup>_Identificação do desequilíbrio e balanceamento por rotação_</sup>
+<sup>_Listagem 5: Identificação do desequilíbrio e balanceamento por rotação_</sup>
 
 A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotacional, a diferença está na busca ascendente ao desequilíbrio, de baixo para cima, a partir do nó recém inserido. Na figura 20 temos a narrativa da escalada pela árvore do nó desbalanceado 87, depois que inserimos o nó 95.
 
