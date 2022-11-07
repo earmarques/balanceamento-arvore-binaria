@@ -168,7 +168,7 @@ Fazemos a busca pelo nó desbalanceado de cima para baixo, isto é, do nó-raiz 
 - dupla-direita e
 - dupla-esquerda.
 
-O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós procuramos ser o mais claro e didático que pudéssemos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao```. Este método identifica qual tipo de rotação deve ser aplicada, a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada, em decorrência da inserção de um novo valor.
+O presente programa é de caráter educacional, tem o objetivo de ser um instrumento de ensino-aprendizagem, então, nós procuramos ser o mais claro e didático que pudéssemos. Dentro do código tem um método muito importante: ```#diagnosticar_tipo_rotacao()```. Este método identifica qual tipo de rotação deve ser aplicada, a fim de fazer o reequilíbrio do galho que deixou a árvore binária desbalanceada, em decorrência da inserção de um novo valor.
 No método ```#diagnosticar_tipo_rotacao``` adicionamos um longo comentário para que o estudante entenda em qual situação cada tipo de rotação deverá ser aplicada. O comentário pode ser observado na figura 16.
 
 <img width=90% alt="Modelagem e concepção para identificar os tipos de rotações" title="Modelagem e concepção para identificar os tipos de rotações" src="images/rotacoes.png"><br>
@@ -242,11 +242,11 @@ encontrar o nó desbalanceado mais profundo, na técnica AVL dos soviéticos, a 
 
 Traz a vantagem de se fazer uma busca menor e mais rápida pelo desequilíbrio, uma vez que o primeiro nó a ser encontrado já será o nó problemático mais profundo. E ainda tem a característica de fazer sempre o mesmo número de operações para reequilibrar a árvore - as operações necessárias às rotações, não importando a profundidade da causa do desbalanceamento.
 
-Podemos dizer que chegamos ao principal, à cereja do bolo, pois as abordagens anteriores eram uma preparação para que o estudante fosse amadurecendo as ideias e técnicas principais presentes neste método. Vimos no método estático que existe uma ordem ótima de inserção, na qual a árvore binária criada já estará balanceada. Vimos no método dinâmico-estático um refino do puramente estático, em que o balanceamento pode ser obtido localizando e balanceando o nó desequilibrado mais próximo do nó inserido. Na técnica dinâmico-rotacional mantivemos a busca por desequilíbrio de cima para baixo, do sentido do nó-raiz para as folhas, e focamos mais isoladamente apenas na novidade mais complexa, as rotações. Agora, a única característica do método AVL que nos falta abordar é sua forma de encontrar o desequilíbrio, que é de baixo para cima. 
+Podemos dizer que chegamos ao tópico principal, pois as abordagens anteriores eram uma preparação para que o estudante fosse amadurecendo as ideias e técnicas presentes neste método de balanceamento. Vimos no método estático que existe uma ordem ótima de inserção, na qual a árvore binária criada já estará balanceada. Vimos no método dinâmico-estático um refino do puramente estático, em que o balanceamento pode ser obtido localizando e balanceando o nó desequilibrado mais próximo do nó inserido. Na técnica dinâmico-rotacional mantivemos a busca por desequilíbrio de cima para baixo, do sentido do nó-raiz para as folhas, e focamos mais isoladamente apenas na novidade mais complexa, as rotações. Agora, a única característica do método AVL que nos falta abordar é sua forma de encontrar o desequilíbrio, que é de baixo para cima. 
 
-Este é o momento que vamos explicar as partes principais da implementação. Para tanto, vamos trazer par cá um código enxuto, sem verificações de condições de contorno como verificação se a árvore está vazia e os vários comandos de impressão. Na listagem 1 temos o método público ```#insere_noh_avl```. Este método encapsula a recorrência presente no método privado ```#__insere_noh_avl_recursivo```. A primeira instrução de código cria a pilha ```historico_geracoes```. 
+Vamos entrar agora nas partes elementares mais relevantes da implementação, trazendo para cá o essencial do código, sem verificações de condições de contorno e comandos de impressão. Na listagem 1, temos o método público ```#insere_noh_avl```. Este método encapsula a recorrência presente no método privado ```#__insere_noh_avl_recursivo```. A primeira instrução de código cria a pilha ```historico_geracoes```. 
 
-Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos como argumento o nó-raiz por onde devemos começar a descida até encontrarmos a posição na árvore do argumento ```valor```. Também passamos a pilha ```historico_geracoes```. Na pilha registramos o caminho percorrido durante a descida, empilhando todos os nós pelos quais passamos pela árvore. Quando formos fazer a busca pelo nó que tenha ficado desequilibrado, nós vamos desempilhando o histórico e checando o balanceamento de cada nó. Usualmente, o desequilíbrio estará próximo do nó inserido.  
+Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos como argumento o nó-raiz por onde devemos começar a descida até encontrarmos a posição na árvore do argumento ```valor```. Também passamos a pilha ```historico_geracoes```. Na pilha registramos o caminho percorrido durante a descida, empilhando todos os nós da árvore pelos quais passamos. Quando formos fazer a busca pelo nó que tenha ficado desequilibrado, nós vamos desempilhando o histórico e checando o balanceamento de cada nó. Usualmente, o desequilíbrio estará próximo do nó inserido.  
 
 
 ```py
@@ -322,6 +322,7 @@ Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo ca
 
 ```py
   ...
+  # desempilha - sobe pela árvore
   noh_filho = noh_pai
   noh_pai   = historico_geracoes.pop() if historico_geracoes else None
   ...
