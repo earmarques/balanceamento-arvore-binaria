@@ -261,7 +261,7 @@ Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos c
     ...
 ```
 
-O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que fazemos no método é empilhar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual(atributo ```#conteudo```), seguimos descendo pelos galhos à esquerda ou à direita, a depender do resultado da comparação. Alcançada a extremidade da árvore, criamos o nó-folha e o adicionamos à árvore e à pilha do histórico ("registro de nascimento").
+O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que fazemos no método é empilhar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual(atributo ```#conteudo```), seguimos descendo pelos galhos à esquerda ou à direita, a depender do resultado da comparação. Alcançada a extremidade da árvore, criamos o nó-folha e o adicionamos à pilha do histórico ("registro de nascimento").
 
 ```py
 def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug=False):
