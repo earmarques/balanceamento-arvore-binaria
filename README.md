@@ -242,32 +242,32 @@ encontrar o nó desbalanceado mais profundo, na técnica AVL dos soviéticos, a 
 
 Traz a vantagem de se fazer uma busca menor e mais rápida pelo desequilíbrio, uma vez que o primeiro nó a ser encontrado já será o nó problemático mais profundo. E ainda tem a característica de fazer sempre o mesmo número de operações para reequilibrar a árvore - as operações necessárias às rotações, não importando a profundidade da causa do desbalanceamento.
 
-Podemos dizer que chegamos ao principal, à cereja do bolo, pois as abordagens anteriores eram uma preparação para que o estudante fosse amadurecendo as ideias e técnicas principais presentes neste método. Vimos no método estático que existe uma ordem ótima de inserção em que a árvore binária criada já estará balanceada. Vimos no método dinâmico-estático um refino do puramente estático, em que o balanceamento pode ser obtido localizando o nó que ficou desequilibrado mais próximo do nó inserido por último. Na técnica dinâmico-rotacional mantivemos a busca por desequilíbrio de cima para baixo, do sentido do nó-raiz para as folhas e focamos apenas na novidade mais densa, nas rotações, de maneira mais isolada. Agora, a única característica do método AVL que nos falta abordar é sua forma de encontrar o desequilíbrio, que é de baixo para cima. 
+Podemos dizer que chegamos ao principal, à cereja do bolo, pois as abordagens anteriores eram uma preparação para que o estudante fosse amadurecendo as ideias e técnicas principais presentes neste método. Vimos no método estático que existe uma ordem ótima de inserção, na qual a árvore binária criada já estará balanceada. Vimos no método dinâmico-estático um refino do puramente estático, em que o balanceamento pode ser obtido localizando e balanceando o nó desequilibrado mais próximo do nó inserido. Na técnica dinâmico-rotacional mantivemos a busca por desequilíbrio de cima para baixo, do sentido do nó-raiz para as folhas, e focamos mais isoladamente apenas na novidade mais complexa, as rotações. Agora, a única característica do método AVL que nos falta abordar é sua forma de encontrar o desequilíbrio, que é de baixo para cima. 
 
-Este é o momento que vamos explicar as partes principais da implementação. Para tanto, vamos trazer par cá um código enxuto, sem verificações de condições de contorno como verificação se a árvore está vazia e os vários comandos de impressão. Na listagem 1 temos o método público ```#insere_noh_avl```. Este método encapsula o método privado ```#__insere_noh_avl_recursivo``` que é o método que faz realmente o principal trabalho. A primeira instrução de código cria a pilha ```historico_geracoes```. 
+Este é o momento que vamos explicar as partes principais da implementação. Para tanto, vamos trazer par cá um código enxuto, sem verificações de condições de contorno como verificação se a árvore está vazia e os vários comandos de impressão. Na listagem 1 temos o método público ```#insere_noh_avl```. Este método encapsula a recorrência presente no método privado ```#__insere_noh_avl_recursivo```. A primeira instrução de código cria a pilha ```historico_geracoes```. 
 
-Quando invocamos o método privado, passamos como argumento o nó-raiz por onde devemos começar a descida até encontrar a posição na árvore do argumento ```valor``` e também passamos o ```historico_geracoes```. A pilha ```historico_geracoes``` armazena o caminho percorrido durante a descida, empilhando todos os nós pelos quais passamos. Quando formos fazer a busca pelo nó que tenha ficado desequilibrado, nós vamos desempilhando o histórico e checando a cada nó o balanceamento. Se subimos pelo caminho da descida até bater no nó-raiz sem encontrar nenhum desequilíbrio, então o novo valor não desbalanceou a árvore. 
+Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos como argumento o nó-raiz por onde devemos começar a descida até encontrarmos a posição na árvore do argumento ```valor```. Também passamos a pilha ```historico_geracoes```. Na pilha registramos o caminho percorrido durante a descida, empilhando todos os nós pelos quais passamos pela árvore. Quando formos fazer a busca pelo nó que tenha ficado desequilibrado, nós vamos desempilhando o histórico e checando o balanceamento de cada nó. Usualmente, o desequilíbrio estará próximo do nó inserido.  
 
-```JS
+
+```py
 # Inserção Russa AVL     -------------------------------------------------------------------------
 
   def insere_noh_avl(self, valor, debug=False):
+    
     historico_geracoes = list()   # uma PILHA, na verdade
-
     self.__insere_noh_avl_recursivo(self.__raiz, valor, historico_geracoes, debug)
 
     # Conferindo o Balanceamento
     ...
 ```
 
-O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que o método faz é adicionar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual corrente conte´do do nó
+O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que fazemos no método é empilhar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual(atributo ```#conteudo```), seguimos descendo pelos galhos à esquerda ou à direita, a depender do resultado da comparação. Alcançada a extremidade da árvore, criamos o nó-folha e o adicionamos à árvore e à pilha do histórico ("registro de nascimento").
 
-```JS
+```py
 def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug=False):
 
     historico_geracoes.append(noh_atual)  # EMPILHA
     ...
-
     # Descer pelo galho da esquerda
     if valor < noh_atual.get_conteudo():
       galho = noh_atual.get_subarvore_esquerda()
@@ -277,219 +277,67 @@ def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug
         self.__insere_noh_avl_recursivo(galho, valor, historico_geracoes, debug)
       else:
         # estou na extremidade, adicionar noh_folha
-        noh_folha = self.__Noh_ArvoreBinaria(valor)
-        noh_atual.set_subarvore_esquerda(noh_folha)
-        self.set_quantidade_noh( self.get_quantidade_noh() + 1 )
-        # registro de nascimento
+        ...        
+        # Registro de nascimento
         historico_geracoes.append(noh_folha)
 
-        # FIZ A INSERÇÃO >> Verificar balanceamento
+        # VERIFICAR BALANCEAMENTO.......................................................
 
         noh_filho = historico_geracoes.pop()  # último a ser inserido
         noh_pai   = historico_geracoes.pop()
-
-        if debug:
-          print(self.__cabecalho('Análise Ascendente do Balanceamento',' '))
-          print('Subindo pelo caminho da descida a partir do noh inserido:')
-          primeira_vez = True
-
+        ...
         while noh_filho:
-          if debug:
-            if not primeira_vez: print('>> UP!!')
-            primeira_vez = False
-
+          ...         
           balanceamento = self.__get_balanceamento(noh_filho)
-          if debug:
-            self.desenhar_noh(noh_filho, balanceamento)
-
+          ...
           if abs(balanceamento) > 1:  # noh desbalanceado
-            if debug:
-              msg = '>> Desequilíbrio encontrado do lado '
-              msg += 'esquerdo !' if balanceamento > 0 else 'direito !'
-              print(msg)
-
+            ...
             self.rotacionar(noh_filho, noh_pai, debug)
-
             break   # pára tudo, serviço pronto
 
           # desempilha - sobe pela árvore
           noh_filho = noh_pai
           noh_pai   = historico_geracoes.pop() if historico_geracoes else None
-
         else:
           if debug: print('Balanceamento: OK ')
-
-    else:
-      # Descer pelo galho da direita
+        
+    else: # Descer pelo galho da direita
       galho = noh_atual.get_subarvore_direita()
-
-      # se tiver galho, continuar descendo  |=>   RECURSÃO !!!
-      if not ( galho == None ):
-        self.__insere_noh_avl_recursivo(galho, valor, historico_geracoes, debug)
-      else:
-        # já estou na ponta, adicionar noh-folha
-        noh_folha = self.__Noh_ArvoreBinaria(valor)
-        noh_atual.set_subarvore_direita(noh_folha)
-        self.set_quantidade_noh( self.get_quantidade_noh() + 1 )
-        historico_geracoes.append(noh_folha)
-
-        if debug:
-          print('Noh inserido.\n{}\n----------'.format(self.__encaixotar(noh_folha,posicao=4)))
-
-        # FIZ A INSERÇÃO >> Verificar balanceamento
-
-        noh_filho = historico_geracoes.pop()  # último a ser inserido
-        noh_pai   = historico_geracoes.pop()
-
-        if debug:
-          print(self.__cabecalho('Análise Ascendente do Balanceamento',' '))
-          print('Subindo pelo caminho da descida a partir do noh inserido:')
-          primeira_vez = True
-
-        while noh_filho:
-          if debug:
-            if not primeira_vez: print('>> UP!!')
-            primeira_vez = False
-
-          balanceamento = self.__get_balanceamento(noh_filho)
-          if debug:
-            self.desenhar_noh(noh_filho, balanceamento)
-
-          if abs(balanceamento) > 1:  # noh desbalanceado
-            if debug:
-              msg = '>> Desequilíbrio encontrado do lado '
-              msg += 'esquerdo !' if balanceamento > 0 else 'direito !'
-              print(msg)
-
-            self.rotacionar(noh_filho, noh_pai, debug)
-
-            break   # pára tudo, serviço pronto
-
-          # desempilha - sobe pela árvore
-          noh_filho = noh_pai
-          noh_pai   = historico_geracoes.pop() if historico_geracoes else None
-
-        else:
-          if debug: print('Balanceamento: OK ')
-
+      ...
+      # Tratativa igual ao galho esquerdo    
+              
     return self.busca_noh(valor, debug=False)
     
 ```
 
+Terminada a adição do novo valor precisamos verificar se afetou o balanceamento da árvore, e se for o caso, corrigir. Iniciamos desempilhando os dois últimos nós do histórico (listagem 3). O nó topo da pilha é o nó que acabara de ser inserido, o chamamos de ```noh-filho```. O noh-pai é o nó-raiz do noh-filho. 
 
-```JS
-def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug=False):
-
-    historico_geracoes.append(noh_atual)  # EMPILHA
-    ...
-
-    # Descer pelo galho da esquerda
-    if valor < noh_atual.get_conteudo():
-      galho = noh_atual.get_subarvore_esquerda()
-
-      # se tiver galho, continuar descendo  |=>   RECURSÃO !!!
-      if not ( galho == None ):
-        self.__insere_noh_avl_recursivo(galho, valor, historico_geracoes, debug)
-      else:
-        # estou na extremidade, adicionar noh_folha
-        noh_folha = self.__Noh_ArvoreBinaria(valor)
-        noh_atual.set_subarvore_esquerda(noh_folha)
-        self.set_quantidade_noh( self.get_quantidade_noh() + 1 )
-        # registro de nascimento
-        historico_geracoes.append(noh_folha)
-
-        # FIZ A INSERÇÃO >> Verificar balanceamento
-
-        noh_filho = historico_geracoes.pop()  # último a ser inserido
-        noh_pai   = historico_geracoes.pop()
-
-        if debug:
-          print(self.__cabecalho('Análise Ascendente do Balanceamento',' '))
-          print('Subindo pelo caminho da descida a partir do noh inserido:')
-          primeira_vez = True
-
-        while noh_filho:
-          if debug:
-            if not primeira_vez: print('>> UP!!')
-            primeira_vez = False
-
-          balanceamento = self.__get_balanceamento(noh_filho)
-          if debug:
-            self.desenhar_noh(noh_filho, balanceamento)
-
-          if abs(balanceamento) > 1:  # noh desbalanceado
-            if debug:
-              msg = '>> Desequilíbrio encontrado do lado '
-              msg += 'esquerdo !' if balanceamento > 0 else 'direito !'
-              print(msg)
-
-            self.rotacionar(noh_filho, noh_pai, debug)
-
-            break   # pára tudo, serviço pronto
-
-          # desempilha - sobe pela árvore
-          noh_filho = noh_pai
-          noh_pai   = historico_geracoes.pop() if historico_geracoes else None
-
-        else:
-          if debug: print('Balanceamento: OK ')
-
-    else:
-      # Descer pelo galho da direita
-      galho = noh_atual.get_subarvore_direita()
-
-      # se tiver galho, continuar descendo  |=>   RECURSÃO !!!
-      if not ( galho == None ):
-        self.__insere_noh_avl_recursivo(galho, valor, historico_geracoes, debug)
-      else:
-        # já estou na ponta, adicionar noh-folha
-        noh_folha = self.__Noh_ArvoreBinaria(valor)
-        noh_atual.set_subarvore_direita(noh_folha)
-        self.set_quantidade_noh( self.get_quantidade_noh() + 1 )
-        historico_geracoes.append(noh_folha)
-
-        if debug:
-          print('Noh inserido.\n{}\n----------'.format(self.__encaixotar(noh_folha,posicao=4)))
-
-        # FIZ A INSERÇÃO >> Verificar balanceamento
-
-        noh_filho = historico_geracoes.pop()  # último a ser inserido
-        noh_pai   = historico_geracoes.pop()
-
-        if debug:
-          print(self.__cabecalho('Análise Ascendente do Balanceamento',' '))
-          print('Subindo pelo caminho da descida a partir do noh inserido:')
-          primeira_vez = True
-
-        while noh_filho:
-          if debug:
-            if not primeira_vez: print('>> UP!!')
-            primeira_vez = False
-
-          balanceamento = self.__get_balanceamento(noh_filho)
-          if debug:
-            self.desenhar_noh(noh_filho, balanceamento)
-
-          if abs(balanceamento) > 1:  # noh desbalanceado
-            if debug:
-              msg = '>> Desequilíbrio encontrado do lado '
-              msg += 'esquerdo !' if balanceamento > 0 else 'direito !'
-              print(msg)
-
-            self.rotacionar(noh_filho, noh_pai, debug)
-
-            break   # pára tudo, serviço pronto
-
-          # desempilha - sobe pela árvore
-          noh_filho = noh_pai
-          noh_pai   = historico_geracoes.pop() if historico_geracoes else None
-
-        else:
-          if debug: print('Balanceamento: OK ')
-
-    return self.busca_noh(valor, debug=False)
-    
+```py
+  ...
+  noh_filho = historico_geracoes.pop()  # último a ser inserido
+  noh_pai   = historico_geracoes.pop()
+  ...
 ```
+Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo caminho que descemos, desempilhando o histórico de gerações até terminar a pilha (```noh-filho == None``` saímos do ```while```).
+
+```py
+  ...
+  noh_filho = noh_pai
+  noh_pai   = historico_geracoes.pop() if historico_geracoes else None
+  ...
+```
+No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada. 
+
+
+```py
+balanceamento = self.__get_balanceamento(noh_filho)
+if abs(balanceamento) > 1:  # noh desbalanceado
+  self.rotacionar(noh_filho, noh_pai, debug)
+  break   # pára tudo, serviço pronto
+```
+
+
+
 
 
 
