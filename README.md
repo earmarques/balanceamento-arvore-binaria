@@ -318,7 +318,7 @@ Terminada a adição do novo valor, precisamos verificar se afetou o balanceamen
   noh_pai   = historico_geracoes.pop()
   ...
 ```
-Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo caminho que descemos, desempilhando o histórico de gerações até terminar a pilha (```noh-filho == None``` saímos do ```while```).
+Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo caminho que descemos, desempilhando o histórico de gerações até terminar a pilha - quando ```noh-filho == None``` saímos do ```while```.
 
 ```py
   ...
@@ -327,7 +327,7 @@ Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo ca
   noh_pai   = historico_geracoes.pop() if historico_geracoes else None
   ...
 ```
-No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada. 
+No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada (listagem 5). 
 
 
 ```py
@@ -337,8 +337,10 @@ if abs(balanceamento) > 1:  # noh desbalanceado
   break   # pára tudo, serviço pronto
 ```
 
+A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotacional, a diferença está na busca ascendente ao desequilíbrio, de baixo para cima, a partir do nó recém inserido. Na figura 20 temos a narrativa da escalada pela árvore do nó desbalanceado 87, depois que inserimos o nó 95.
 
-
+<img alt="Busca ascendente pelo desequilíbrio" title="Busca ascendente pelo desequilíbrio" src="images/escalada.png"><br>
+<sup>_Figura 20: Busca ascendente pelo desequilíbrio_</sup>
 
 
 
