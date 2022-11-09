@@ -1,6 +1,11 @@
 # Balanceamento de Árvore Binária
 
-RESUMO: TODO....
+Programa voltado ao ensino-aprendizagem de balanceamento de árvores binárias. 
+<br>A partir de uma árvore base de testes, o estudante insere nós para provocar o desbalanceamento, para em seguida, reequilibrar com uma das quatro técnicas de balaceamento disponibilizados: o **```Estático```**, o **```Dinâmico-Estático```**, o **```Dinâmico-Rotacional```** e o **```Dinâmico Soviético-AVL```**. O programa tem uma saída rica em detalhes de todas as operações que estão sendo realizadas para se fazer o balanceamento.
+
+<img width=80% alt="Balanceamento Árvore Binária" title="Balanceamento Árvore Binária" src="images/ab_overview.png"/><br>
+<sup>_Figura 1: Balanceamento Árvore Binária: Visão Geral_</sup>
+
 
 ### Contexto
 
@@ -9,7 +14,7 @@ Fatec-RioPreto/SP, 3° semestre do curso Análise e Desnvolvimento de Sistemas, 
 Para a parte prática, o professor Carlos forneceu um código minimamente estruturado de _Listas Simplesmente Encadeadas_ em ```Python```, porém, estas classes estavam propositalmente incompletas. Após a explicação, o professor passava a complementação destas classes como atividade para nota. O estudante era desafiado a terminar as classes, implementando os métodos com as funcionalidades faltantes, tais como: inserir e remover elementos no início e no final da lista, percorrer os elementos da lista por diferentes percursos, estender o código fornecido a fim de obtermos uma _Lista Duplamente Encadeada_, entre outras.
 
 Sedimentados os conceitos de listas encadeadas entramos em _Árvores Binárias_. Vimos dois métodos de balanceamento de árvore, o balanceamento estático e o método soviético AVL (_Adelson Velsky e Landis_). Para essa parte o professor não tinha códigos de demonstração. 
-O que fizemos foi implementar em ```Python``` quatro métodos de balanceamento, os dois vistos nas aulas, o **```estático```**, o **```dinâmico soviético AVL```** e mais 2 hidridos que criamos mesclando ideias dos dois anteriores, que os chamamos de **```dinâmico-estático```** e **```dinâmico-rotacional```**.
+O que fizemos foi implementar em ```Python``` quatro métodos de balanceamento, os dois vistos nas aulas, o **```Estático```**, o **```Dinâmico Soviético-AVL```** e mais 2 hidridos que criamos mesclando ideias dos dois anteriores, que os chamamos de **```Dinâmico-Estático```** e **```Dinâmico-Rotacional```**.
 
 No material, o professor se utilizava sempre de uma mesma árvore binária, inseria um elemento que à desbalanceava e dai partia para explicar o algoritimo. Nosso código dá suporte à estas aulas, logo, carregamos esta árvore previamente no código e a partir dela sugerimos inserções que provocarão certos desbalanceamentos específicos. 
 
