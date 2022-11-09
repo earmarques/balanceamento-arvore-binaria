@@ -337,7 +337,7 @@ Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo ca
   noh_filho = noh_pai
   noh_pai   = historico_geracoes.pop() if historico_geracoes else None
   ...
-```
+```<br>
 _Listagem 4: Atualização das varáveis de controle do laço de subida_
 
 No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada (listagem 5). 
@@ -348,7 +348,7 @@ balanceamento = self.__get_balanceamento(noh_filho)
 if abs(balanceamento) > 1:  # noh desbalanceado
   self.rotacionar(noh_filho, noh_pai, debug)
   break   # pára tudo, serviço pronto
-```
+```<br>
 _Listagem 5: Identificação do desequilíbrio e balanceamento por rotação_
 
 A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotacional, a diferença está na busca ascendente ao desequilíbrio, de baixo para cima, a partir do nó recém inserido. Na figura 20 temos a narrativa da escalada pela árvore do nó desbalanceado 87, depois que inserimos o nó 95.
