@@ -1,7 +1,7 @@
 # Balanceamento de Árvore Binária
 
 Programa voltado ao ensino-aprendizagem de balanceamento de árvores binárias.
-<br>A partir de uma árvore base de testes, o estudante insere nós para provocar o desbalanceamento, para em seguida, reequilibrar com uma das quatro técnicas de balaceamento disponibilizados: **```Estático```**, **```Dinâmico-Estático```**, **```Dinâmico-Rotacional```** e **```Dinâmico Soviético-AVL```**. O programa tem uma saída rica em detalhes de todas as operações que estão sendo realizadas para se fazer o balanceamento.
+<br>A partir de uma árvore base de testes, o estudante insere nós para provocar o desbalanceamento, para em seguida, reequilibrar com uma das quatro técnicas de balanceamento disponibilizados: **```Estático```**, **```Dinâmico-Estático```**, **```Dinâmico-Rotacional```** e **```Dinâmico Soviético-AVL```**. O programa tem uma saída rica em detalhes de todas as operações que estão sendo realizadas para se fazer o balanceamento.
 
 <img width=80% alt="Balanceamento Árvore Binária" title="Balanceamento Árvore Binária" src="images/ab_overview.png"/><br>
 <sup>_Figura 1: Balanceamento Árvore Binária: Visão Geral_</sup>
