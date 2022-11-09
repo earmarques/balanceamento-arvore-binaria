@@ -2240,32 +2240,32 @@ def main():
   MUDAR_METODO =           8
 
   opcoes_menu_metodos_balanceamento = {
-        1 : 'ESTATICO',
-        2 : 'DINAMICO_ESTATICO',
-        3 : 'DINAMICO_ROTACIONAL',
-        4 : 'DINAMICO_RUSSO_AVL',
+    1 : 'ESTATICO',
+    2 : 'DINAMICO_ESTATICO',
+    3 : 'DINAMICO_ROTACIONAL',
+    4 : 'DINAMICO_RUSSO_AVL',
     9 : 'SAIR',
     }
 
   opcoes_estatico = {
     0 : 'EXIBIR_INFO',
     1 : 'INSERIR_VALOR',
-        2 : 'DESENHAR_GALHOS',
-        3 : 'CHECAR_BALANCEAMENTO',
-        4 : 'REALIZAR_BALANCEAMENTO',
+    2 : 'DESENHAR_GALHOS',
+    3 : 'CHECAR_BALANCEAMENTO',
+    4 : 'REALIZAR_BALANCEAMENTO',
     7 : 'REINICIAR_ARVORE',
     8 : 'MUDAR_METODO',
-        9 : 'SAIR'
+    9 : 'SAIR'
     }
 
   opcoes_dinamico_estatico = {      # Não tem a opção "realizar balanceamento",
     0 : 'EXIBIR_INFO',              # porque já é feito no momento de cada inserção
     1 : 'INSERIR_VALOR',
-        2 : 'DESENHAR_GALHOS',
-        3 : 'CHECAR_BALANCEAMENTO',
+    2 : 'DESENHAR_GALHOS',
+    3 : 'CHECAR_BALANCEAMENTO',
     7 : 'REINICIAR_ARVORE',
     8 : 'MUDAR_METODO',
-        9 : 'SAIR'
+    9 : 'SAIR'
     }
 
   opcoes_dinamico_rotacional = dict(opcoes_dinamico_estatico)     # cópia - outro objeto
