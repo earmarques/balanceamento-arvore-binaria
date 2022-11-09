@@ -252,7 +252,7 @@ class ArvoreBinaria:
     self.__percurso_pre_ordem_recursivo(noh_atual.get_subarvore_direita())   # D
 
 
-  # Percurso Pré-Ordem |=> E -> D -> R     ---------------------------------------------------------
+  # Percurso Pós-Ordem |=> E -> D -> R     ---------------------------------------------------------
 
   def percurso_pos_ordem(self):
     self.__percurso_pos_ordem_recursivo(self.get_raiz())
