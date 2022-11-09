@@ -146,7 +146,7 @@ Concluído o transplante de galho, fazemos uma nova checagem do balanceamento. O
 <img width=80% alt="Propriedades da árvore antes do balanceamento" title="Propriedades da árvore antes do balanceamento" src="images/din-est_antes.png"><br>
 _Figura 14.a: Propriedades da árvore antes do balanceamento_
 <img width=80% alt="Propriedades da árvore depois do balanceamento" title="Propriedades da árvore depois do balanceamento" src="images/din-est_depois.png"><br>
-Figura 14.b: Propriedades da árvore depois do balanceamento_
+_Figura 14.b: Propriedades da árvore depois do balanceamento_
 
 Reiteramos que a principal diferença desta abordagem em relação ao balanceamento estático é que, no puramente estático, removemos todos os elementos, isto é, o balanceamento é aplicado à árvore toda, enquanto que na inserção dinâmica-estática removemos apenas o ramo problemático, ou seja, aplicamos o balanceamento apenas a um galho, sem afetar o restante da árvore. Logo, basta olharmos como ficou o novo galho enxertado.
 
@@ -192,7 +192,7 @@ Na tabela 1 sugerimos alguns valores que provocam um tipo de rotação específi
 ```DUPLA_DIREITA```          | inserir nó 62 ou 22
 ```DUPLA_ESQUERDA```(**\***) | inserir 70, seguido de 73 e por fim o nó 68
 
- <sup> _Tabela 1: Sugestões de inserções de valores para rotações específicas_ </sup>
+ _Tabela 1: Sugestões de inserções de valores para rotações específicas_ 
 
 O destaque (**\***) na rotação dupla esquerda chama atenção para o fato de que, tendo por base a árvore original de testes, não é possível obtermos a rotação dupla-esquerda inserindo apenas um elemento. Nesta sugestão, a inserção dos nós 70 e 73 não desequilibram a árvore, apenas a modifica, para que o desequilíbrio gerado pela adição do nó 68 resulte em uma rotação dupla-esquerda.
 
@@ -201,7 +201,7 @@ Pelo fato do programa informar cada etapa do processo, a saída do programa é e
 Feita a identificação do nó desequilibrado, no caso o nó ```avo``` 87, precisamos determinar o tipo rotação que corrige o desbalanceamento. Na figura 17 vemos o tipo de rotação sendo determinado e um quadro muito importante ao entendimento, pois traz a identificação de quais nós cumprem quais papeis na hierarquia dos varões da família. No quadro vemos o nó ```avo```  desequilibrado (87), mas não vemos o netinho (95) que nasceu, pois ele está segurando a mão esquerda do nó ```filho``` (96). Na rotação iremos movimentar o nó ```filho``` (96) e com ele vai o ```neto_esquerdo``` (95) junto. Para não poluir de informação, optamos por compor o quadro apenas com os nós que estão diretamente envolvidos no reposicionamento. 
 
 <img width=80% alt="Rotação simples para esquerda" title="Rotação simples para esquerda" src="images/simples_esquerda.png"><br>
-<sup>_Figura 17: Rotação simples para esquerda_</sup>
+_Figura 17: Rotação simples para esquerda_
 
 As rotações inicialmente vão paracer um tanto confusas, com nós sendo trocados de posição, e para tanto, devem eliminar ligações com alguns nós, recricar novas ligações com outros nós e algumas devem ser mantidas. Optamos por uma abordagem analítica, somente um efeito em cada movimento. Adotamos por indicar **\"\[\"** quando estivermos rompendo as ligações entre nós A e B quaisquer. Usamos **\"\]\"** para denotar que estamos estabelencendo vínculos. Adotamos a política de não fazemos ligações entre nós antes de que a posição que o nó irá ocupar esteja vaga.
 
@@ -210,12 +210,12 @@ Se dois nós A e B estão conectados, então eles têm reciprocidade de referên
 Na figura 18 temos o primeiro movimento **\"\[\"**, a quebra de alguns vínculos. A três etapas genéricas de quebra de ligação estão enumeradas por \[#.1, \[#.2 e \[#.3. Em cada uma delas, desenhamos como estava antes e como ficou depois. Na etapa \[#.1, por exemplo, a norma geral é desprender o ```avo``` do ```bisavo```, se ```bisavo``` existir. Por isso que o quadro da figura 17 é um auxiliar importante. O nó ```avo``` é o 87 e o ```bisavo``` o 76. Depois da operação vemos a vacância do lado direito, indicando que os nós ```bisavo``` e ```avo``` já não se conhecem mais. As etapas \[#.2 e \[#.3 seguem a mesma ideia.
 
 <img alt="Quebra de laços familiares: quebrando referências mútuas" title="Quebra de laços familiares: quebrando referências mútuas" src="images/quebra_lacos.png"><br>
-<sup>_Figura 18: Quebra de laços familiares: quebrando referências mútuas_</sup>
+_Figura 18: Quebra de laços familiares: quebrando referências mútuas_
 
 Na figura 19 temos o segundo movimento **\"\]\"**, o estabelecimento de novos vínculos entre os nós. Note que agora as etapas estão em ordem decrescente, #.3\], #.2\] e #.1\]. Isso porque as etapas restabelecem, na ordem respectiva, os laços rompidos no movimento anterior. Nós tratamos da etapa \[#.1 na qual o ```bisavo``` 76 perdeu toda a linhagem de um de seus filhos (o nó ```avo``` 87). Na última etapa realizada, em #.1] reconectamos a prole ao nó ```bisavo``` 76, através do nó ```pai``` 94, que agora ocupará o lugar do nó ```avo``` 87. Nos faz lembrar da teoria de reencarnações presente em algumas religiões, em que seu avô pode ter sido seu filho em outra vida e etc..
 
 <img alt="Reencarnações fazendo novos laços familiares: estabelecendo novas conecções" title="Reencarnações fazendo novos laços familiares: estabelecendo novas conecções" src="images/reconecta_lacos.png"><br>
-<sup>_Figura 19: Reencarnações fazendo novos laços familiares: estabelecendo novas conecções_</sup>
+_Figura 19: Reencarnações fazendo novos laços familiares: estabelecendo novas conecções_
 
 As rotações duplas tem saídas ainda mais extensas. A primeira rotação faz alterações preliminares, preparatórias para a segunda rotação que estabelece conecções definitivas. Cada rotação possui dois movimentos, o primeiro quebrando laços e o segundo movimento os recriando. Recomendamos que o estudante analise detidamente a saída do programa e identifique cada etapa no código fonte. 
 
@@ -267,7 +267,7 @@ Quando invocamos o método privado ```#__insere_noh_avl_recursivo```, passamos c
     # Conferindo o Balanceamento
     ...
 ```
-<sup>_Listagem 1: Método público para inserção com balanceamento AVL_</sup>
+_Listagem 1: Método público para inserção com balanceamento AVL_
 
 O método ```#__insere_noh_avl_recursivo``` é o que faz a recorrência. Ele invoca a si mesmo até encontrar o nó da extremidade em que ficará posicionado o novo valor inserido. Veja na listagem 2 que a primeira coisa que fazemos no método é empilhar o ```noh_atual``` ao histórico. Depois, comparando o novo valor com o valor contido dentro do nó atual(atributo ```#conteudo```), seguimos descendo pelos galhos à esquerda ou à direita, a depender do resultado da comparação. Alcançada a extremidade da árvore, criamos o nó-folha e o adicionamos à pilha do histórico ("registro de nascimento").
 
@@ -317,7 +317,7 @@ def __insere_noh_avl_recursivo(self, noh_atual, valor, historico_geracoes, debug
     return self.busca_noh(valor, debug=False)
     
 ```
-<sup>_Listagem 2: Partes essenciais à lógica da inserção com balanceamento AVL_</sup>
+_Listagem 2: Partes essenciais à lógica da inserção com balanceamento AVL_
 
 Terminada a adição do novo valor, precisamos verificar se afetou o balanceamento da árvore, e se for o caso, corrigir. Iniciamos desempilhando os dois últimos nós do histórico (listagem 3). O nó topo da pilha é o nó que acabara de ser inserido, o chamamos de ```noh-filho```. O noh-pai é o nó-raiz do noh-filho. 
 
@@ -327,7 +327,7 @@ Terminada a adição do novo valor, precisamos verificar se afetou o balanceamen
   noh_pai   = historico_geracoes.pop()
   ...
 ```
-<sup>_Listagem 3: Inicialização das variáveis de controle do laço de subida pelos nós da árvore_</sup>
+_Listagem 3: Inicialização das variáveis de controle do laço de subida pelos nós da árvore_
 
 Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo caminho que descemos, desempilhando o histórico de gerações até terminar a pilha - quando ```noh-filho == None``` saímos do ```while```.
 
@@ -338,7 +338,7 @@ Em seguida, entramos em um laço em que seguimos subindo a árvore pelo mesmo ca
   noh_pai   = historico_geracoes.pop() if historico_geracoes else None
   ...
 ```
-<sup>_Listagem 4: Atualização das varáveis de controle do laço de subida_</sup>
+_Listagem 4: Atualização das varáveis de controle do laço de subida_
 
 No processo, checamos o balanceamento do nó. Se o nó estiver desbalanceado, corrigimos o balanceamento aplicando a rotação e já podemos encerrar o laço (```break```), porque não há mais nada a fazer, a árvore está balanceada (listagem 5). 
 
@@ -349,12 +349,12 @@ if abs(balanceamento) > 1:  # noh desbalanceado
   self.rotacionar(noh_filho, noh_pai, debug)
   break   # pára tudo, serviço pronto
 ```
-<sup>_Listagem 5: Identificação do desequilíbrio e balanceamento por rotação_</sup>
+_Listagem 5: Identificação do desequilíbrio e balanceamento por rotação_
 
 A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotacional, a diferença está na busca ascendente ao desequilíbrio, de baixo para cima, a partir do nó recém inserido. Na figura 20 temos a narrativa da escalada pela árvore do nó desbalanceado 87, depois que inserimos o nó 95.
 
 <img alt="Busca ascendente pelo desequilíbrio" title="Busca ascendente pelo desequilíbrio" src="images/escalada.png"><br>
-<sup>_Figura 20: Busca ascendente pelo desequilíbrio_</sup>
+_Figura 20: Busca ascendente pelo desequilíbrio_
 
 Assim concluímos a apresentação do nosso trabalho oferecido ao estimado Professor Carlos. Esperamos que tanto este quanto o de [algoritmos de ordenação](https://github.com/earmarques/metodos-ordenacao) possa elevar ainda mais o nível de excelência das aulas do querido Mestre.
 
