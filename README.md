@@ -356,7 +356,7 @@ A saída do balanceamento AVL, é muito parecida com a saída do dinâmico-rotac
 <img alt="Busca ascendente pelo desequilíbrio" title="Busca ascendente pelo desequilíbrio" src="images/escalada.png"><br>
 _Figura 20: Busca ascendente pelo desequilíbrio_
 
-Assim concluímos a apresentação do nosso trabalho oferecido ao estimado Professor Carlos. Esperamos que tanto este quanto o de [algoritmos de ordenação](https://github.com/earmarques/metodos-ordenacao) possa elevar ainda mais o nível de excelência das aulas do querido Mestre.
+Assim concluímos a apresentação do nosso trabalho oferecido ao estimado Professor Carlos. Esperamos que tanto este quanto o de [Algoritmos de Ordenação](https://github.com/earmarques/metodos-ordenacao) possa elevar ainda mais o nível de excelência das aulas do querido Mestre.
 
 
 
